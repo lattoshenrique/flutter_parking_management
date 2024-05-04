@@ -1,4 +1,4 @@
-name: vehicles
+name: vehicles_commons
 description: "A new Flutter package project."
 version: 0.0.1
 publish_to: "none"
@@ -12,11 +12,17 @@ dependencies:
     sdk: flutter
 
   common_deps:
-    path: ../common_deps
+    git:
+      url: https://github.com/lattoshenrique/flutter_parking_management.git
+      path: packages/common_deps
+      ref: main
   core:
-    path: ../core
-  design_system:
-    path: ../design_system
+    git:
+      url: https://github.com/lattoshenrique/flutter_parking_management.git
+      path: packages/core
+      ref: main
+
+  uuid: ^4.4.0
 
 dev_dependencies:
   flutter_test:
