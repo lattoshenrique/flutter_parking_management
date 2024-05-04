@@ -1,4 +1,8 @@
 import 'package:common_deps/common_deps.dart';
+import 'package:core/core.dart';
+import 'package:vehicles/vehicles.dart';
+
+part 'base_app_module_routing.dart';
 
 class _GlobalBinds extends Module {
   @override
@@ -7,7 +11,7 @@ class _GlobalBinds extends Module {
   }
 }
 
-class AppModule extends Module {
+class BaseAppModule extends Module {
   @override
   void binds(Injector i) {}
 

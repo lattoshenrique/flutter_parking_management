@@ -3,14 +3,14 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-class AppWidget extends StatefulWidget {
-  const AppWidget({super.key});
+class BaseAppWidget extends StatefulWidget {
+  const BaseAppWidget({super.key});
 
   @override
-  State<AppWidget> createState() => _AppWidgetState();
+  State<BaseAppWidget> createState() => _BaseAppWidgetState();
 }
 
-class _AppWidgetState extends State<AppWidget> {
+class _BaseAppWidgetState extends State<BaseAppWidget> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(

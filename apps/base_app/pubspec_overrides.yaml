@@ -1,4 +1,4 @@
-# melos_managed_dependency_overrides: common_deps,core,design_system
+# melos_managed_dependency_overrides: common_deps,core,design_system,vehicles,vehicles_commons
 dependency_overrides:
   common_deps:
     path: ..\\..\\packages\\common_deps
@@ -6,3 +6,7 @@ dependency_overrides:
     path: ..\\..\\packages\\core
   design_system:
     path: ..\\..\\packages\\design_system
+  vehicles:
+    path: ..\\..\\packages\\vehicles\\vehicles
+  vehicles_commons:
+    path: ..\\..\\packages\\vehicles\\vehicles_commons
