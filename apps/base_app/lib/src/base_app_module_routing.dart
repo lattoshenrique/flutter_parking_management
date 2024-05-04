@@ -4,8 +4,12 @@ abstract class BaseAppModuleRouting {
   static const root = BasePath('/');
 
   static void routes(RouteManager r) {
-    r.module(
+    r.child(
       root.path,
+      child: (_) => const WelcomePage(),
+    );
+    r.module(
+      VehiclesCommonsModulePaths.root.path,
       module: VehiclesModule(),
     );
   }

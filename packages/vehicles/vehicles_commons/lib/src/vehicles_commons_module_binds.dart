@@ -19,7 +19,7 @@ abstract class VehiclesCommonsModuleBinds {
 
   static void _infra(Injector i) {
     i.add<IStorageClient<List<VehicleModel>>>(
-      () => HiveStorageAdapter(_kHiveVehiclesBoxKey),
+      () => HiveStorageAdapter<List<VehicleModel>>(_kHiveVehiclesBoxKey),
     );
   }
 

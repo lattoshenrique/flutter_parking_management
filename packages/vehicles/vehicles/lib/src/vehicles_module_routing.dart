@@ -1,9 +1,11 @@
 part of 'vehicles_module.dart';
 
-abstract class VehiclesModuleRouting extends VehiclesCommonsModulePaths {
+abstract class VehiclesModuleRouting {
+  static const vehicleListPage = BasePath('/', VehiclesCommonsModulePaths.root);
+
   static void routes(RouteManager r) {
     r.child(
-      VehiclesCommonsModulePaths.root.path,
+      vehicleListPage.path,
       child: (_) => const VehicleListPage(),
     );
   }

@@ -23,6 +23,11 @@ dependencies:
       url: https://github.com/lattoshenrique/flutter_parking_management.git
       path: packages/core
       ref: main
+  design_system:
+    git:
+      url: https://github.com/lattoshenrique/flutter_parking_management.git
+      path: packages/design_system
+      ref: main
   vehicles:
     git:
       url: https://github.com/lattoshenrique/flutter_parking_management.git

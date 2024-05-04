@@ -21,8 +21,7 @@ class _BaseAppWidgetState extends State<BaseAppWidget> {
             return MaterialApp.router(
               debugShowCheckedModeBanner: false,
               title: 'Parking Management',
-              routeInformationParser: Modular.routeInformationParser,
-              routerDelegate: Modular.routerDelegate,
+              routerConfig: Modular.routerConfig,
               theme: ThemeFactory.buildFor(ThemeType.light),
               darkTheme: ThemeFactory.buildFor(ThemeType.dark),
               localizationsDelegates: const [

@@ -25,10 +25,10 @@ ThemeData _buildLight() {
 ThemeData _buildDark() {
   return ThemeData.from(
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.deepPurple,
+      seedColor: Colors.purple,
       brightness: Brightness.dark,
     ),
-    textTheme: Typography.material2021().black,
+    textTheme: Typography.material2021().white,
     useMaterial3: true,
   );
 }
