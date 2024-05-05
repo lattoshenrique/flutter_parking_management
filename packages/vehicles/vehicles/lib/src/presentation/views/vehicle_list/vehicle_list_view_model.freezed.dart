@@ -84,23 +84,23 @@ abstract class LoadingVehicleListViewModelState
 }
 
 /// @nodoc
-abstract class _$$LoadingAllErrorVehicleListViewModelStateImplCopyWith<$Res> {
-  factory _$$LoadingAllErrorVehicleListViewModelStateImplCopyWith(
-          _$LoadingAllErrorVehicleListViewModelStateImpl value,
-          $Res Function(_$LoadingAllErrorVehicleListViewModelStateImpl) then) =
-      __$$LoadingAllErrorVehicleListViewModelStateImplCopyWithImpl<$Res>;
+abstract class _$$ErrorVehicleListViewModelStateImplCopyWith<$Res> {
+  factory _$$ErrorVehicleListViewModelStateImplCopyWith(
+          _$ErrorVehicleListViewModelStateImpl value,
+          $Res Function(_$ErrorVehicleListViewModelStateImpl) then) =
+      __$$ErrorVehicleListViewModelStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$LoadingAllErrorVehicleListViewModelStateImplCopyWithImpl<$Res>
+class __$$ErrorVehicleListViewModelStateImplCopyWithImpl<$Res>
     extends _$VehicleListViewModelStateCopyWithImpl<$Res,
-        _$LoadingAllErrorVehicleListViewModelStateImpl>
-    implements _$$LoadingAllErrorVehicleListViewModelStateImplCopyWith<$Res> {
-  __$$LoadingAllErrorVehicleListViewModelStateImplCopyWithImpl(
-      _$LoadingAllErrorVehicleListViewModelStateImpl _value,
-      $Res Function(_$LoadingAllErrorVehicleListViewModelStateImpl) _then)
+        _$ErrorVehicleListViewModelStateImpl>
+    implements _$$ErrorVehicleListViewModelStateImplCopyWith<$Res> {
+  __$$ErrorVehicleListViewModelStateImplCopyWithImpl(
+      _$ErrorVehicleListViewModelStateImpl _value,
+      $Res Function(_$ErrorVehicleListViewModelStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -108,7 +108,7 @@ class __$$LoadingAllErrorVehicleListViewModelStateImplCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$LoadingAllErrorVehicleListViewModelStateImpl(
+    return _then(_$ErrorVehicleListViewModelStateImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -119,23 +119,23 @@ class __$$LoadingAllErrorVehicleListViewModelStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingAllErrorVehicleListViewModelStateImpl
-    implements LoadingAllErrorVehicleListViewModelState {
-  const _$LoadingAllErrorVehicleListViewModelStateImpl(this.message);
+class _$ErrorVehicleListViewModelStateImpl
+    implements ErrorVehicleListViewModelState {
+  const _$ErrorVehicleListViewModelStateImpl(this.message);
 
   @override
   final String message;
 
   @override
   String toString() {
-    return 'VehicleListViewModelState.loadingAllError(message: $message)';
+    return 'VehicleListViewModelState.error(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadingAllErrorVehicleListViewModelStateImpl &&
+            other is _$ErrorVehicleListViewModelStateImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -145,22 +145,21 @@ class _$LoadingAllErrorVehicleListViewModelStateImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadingAllErrorVehicleListViewModelStateImplCopyWith<
-          _$LoadingAllErrorVehicleListViewModelStateImpl>
-      get copyWith =>
-          __$$LoadingAllErrorVehicleListViewModelStateImplCopyWithImpl<
-              _$LoadingAllErrorVehicleListViewModelStateImpl>(this, _$identity);
+  _$$ErrorVehicleListViewModelStateImplCopyWith<
+          _$ErrorVehicleListViewModelStateImpl>
+      get copyWith => __$$ErrorVehicleListViewModelStateImplCopyWithImpl<
+          _$ErrorVehicleListViewModelStateImpl>(this, _$identity);
 }
 
-abstract class LoadingAllErrorVehicleListViewModelState
+abstract class ErrorVehicleListViewModelState
     implements VehicleListViewModelState {
-  const factory LoadingAllErrorVehicleListViewModelState(final String message) =
-      _$LoadingAllErrorVehicleListViewModelStateImpl;
+  const factory ErrorVehicleListViewModelState(final String message) =
+      _$ErrorVehicleListViewModelStateImpl;
 
   String get message;
   @JsonKey(ignore: true)
-  _$$LoadingAllErrorVehicleListViewModelStateImplCopyWith<
-          _$LoadingAllErrorVehicleListViewModelStateImpl>
+  _$$ErrorVehicleListViewModelStateImplCopyWith<
+          _$ErrorVehicleListViewModelStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -250,209 +249,5 @@ abstract class LoadedVehicleListViewModelState
   @JsonKey(ignore: true)
   _$$LoadedVehicleListViewModelStateImplCopyWith<
           _$LoadedVehicleListViewModelStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$LoadingDeleteVehicleListViewModelStateImplCopyWith<$Res> {
-  factory _$$LoadingDeleteVehicleListViewModelStateImplCopyWith(
-          _$LoadingDeleteVehicleListViewModelStateImpl value,
-          $Res Function(_$LoadingDeleteVehicleListViewModelStateImpl) then) =
-      __$$LoadingDeleteVehicleListViewModelStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<Vehicle> vehicles, int index});
-}
-
-/// @nodoc
-class __$$LoadingDeleteVehicleListViewModelStateImplCopyWithImpl<$Res>
-    extends _$VehicleListViewModelStateCopyWithImpl<$Res,
-        _$LoadingDeleteVehicleListViewModelStateImpl>
-    implements _$$LoadingDeleteVehicleListViewModelStateImplCopyWith<$Res> {
-  __$$LoadingDeleteVehicleListViewModelStateImplCopyWithImpl(
-      _$LoadingDeleteVehicleListViewModelStateImpl _value,
-      $Res Function(_$LoadingDeleteVehicleListViewModelStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? vehicles = null,
-    Object? index = null,
-  }) {
-    return _then(_$LoadingDeleteVehicleListViewModelStateImpl(
-      vehicles: null == vehicles
-          ? _value._vehicles
-          : vehicles // ignore: cast_nullable_to_non_nullable
-              as List<Vehicle>,
-      index: null == index
-          ? _value.index
-          : index // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$LoadingDeleteVehicleListViewModelStateImpl
-    implements LoadingDeleteVehicleListViewModelState {
-  const _$LoadingDeleteVehicleListViewModelStateImpl(
-      {required final List<Vehicle> vehicles, required this.index})
-      : _vehicles = vehicles;
-
-  final List<Vehicle> _vehicles;
-  @override
-  List<Vehicle> get vehicles {
-    if (_vehicles is EqualUnmodifiableListView) return _vehicles;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_vehicles);
-  }
-
-  @override
-  final int index;
-
-  @override
-  String toString() {
-    return 'VehicleListViewModelState.loadingDelete(vehicles: $vehicles, index: $index)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LoadingDeleteVehicleListViewModelStateImpl &&
-            const DeepCollectionEquality().equals(other._vehicles, _vehicles) &&
-            (identical(other.index, index) || other.index == index));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_vehicles), index);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LoadingDeleteVehicleListViewModelStateImplCopyWith<
-          _$LoadingDeleteVehicleListViewModelStateImpl>
-      get copyWith =>
-          __$$LoadingDeleteVehicleListViewModelStateImplCopyWithImpl<
-              _$LoadingDeleteVehicleListViewModelStateImpl>(this, _$identity);
-}
-
-abstract class LoadingDeleteVehicleListViewModelState
-    implements VehicleListViewModelState {
-  const factory LoadingDeleteVehicleListViewModelState(
-      {required final List<Vehicle> vehicles,
-      required final int index}) = _$LoadingDeleteVehicleListViewModelStateImpl;
-
-  List<Vehicle> get vehicles;
-  int get index;
-  @JsonKey(ignore: true)
-  _$$LoadingDeleteVehicleListViewModelStateImplCopyWith<
-          _$LoadingDeleteVehicleListViewModelStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$LoadingDeleteErrorVehicleListViewModelStateImplCopyWith<
-    $Res> {
-  factory _$$LoadingDeleteErrorVehicleListViewModelStateImplCopyWith(
-          _$LoadingDeleteErrorVehicleListViewModelStateImpl value,
-          $Res Function(_$LoadingDeleteErrorVehicleListViewModelStateImpl)
-              then) =
-      __$$LoadingDeleteErrorVehicleListViewModelStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String message, List<Vehicle> vehicles});
-}
-
-/// @nodoc
-class __$$LoadingDeleteErrorVehicleListViewModelStateImplCopyWithImpl<$Res>
-    extends _$VehicleListViewModelStateCopyWithImpl<$Res,
-        _$LoadingDeleteErrorVehicleListViewModelStateImpl>
-    implements
-        _$$LoadingDeleteErrorVehicleListViewModelStateImplCopyWith<$Res> {
-  __$$LoadingDeleteErrorVehicleListViewModelStateImplCopyWithImpl(
-      _$LoadingDeleteErrorVehicleListViewModelStateImpl _value,
-      $Res Function(_$LoadingDeleteErrorVehicleListViewModelStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-    Object? vehicles = null,
-  }) {
-    return _then(_$LoadingDeleteErrorVehicleListViewModelStateImpl(
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      vehicles: null == vehicles
-          ? _value._vehicles
-          : vehicles // ignore: cast_nullable_to_non_nullable
-              as List<Vehicle>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$LoadingDeleteErrorVehicleListViewModelStateImpl
-    implements LoadingDeleteErrorVehicleListViewModelState {
-  const _$LoadingDeleteErrorVehicleListViewModelStateImpl(
-      {required this.message, required final List<Vehicle> vehicles})
-      : _vehicles = vehicles;
-
-  @override
-  final String message;
-  final List<Vehicle> _vehicles;
-  @override
-  List<Vehicle> get vehicles {
-    if (_vehicles is EqualUnmodifiableListView) return _vehicles;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_vehicles);
-  }
-
-  @override
-  String toString() {
-    return 'VehicleListViewModelState.loadingDeleteError(message: $message, vehicles: $vehicles)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LoadingDeleteErrorVehicleListViewModelStateImpl &&
-            (identical(other.message, message) || other.message == message) &&
-            const DeepCollectionEquality().equals(other._vehicles, _vehicles));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, message, const DeepCollectionEquality().hash(_vehicles));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LoadingDeleteErrorVehicleListViewModelStateImplCopyWith<
-          _$LoadingDeleteErrorVehicleListViewModelStateImpl>
-      get copyWith =>
-          __$$LoadingDeleteErrorVehicleListViewModelStateImplCopyWithImpl<
-                  _$LoadingDeleteErrorVehicleListViewModelStateImpl>(
-              this, _$identity);
-}
-
-abstract class LoadingDeleteErrorVehicleListViewModelState
-    implements VehicleListViewModelState {
-  const factory LoadingDeleteErrorVehicleListViewModelState(
-          {required final String message,
-          required final List<Vehicle> vehicles}) =
-      _$LoadingDeleteErrorVehicleListViewModelStateImpl;
-
-  String get message;
-  List<Vehicle> get vehicles;
-  @JsonKey(ignore: true)
-  _$$LoadingDeleteErrorVehicleListViewModelStateImplCopyWith<
-          _$LoadingDeleteErrorVehicleListViewModelStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

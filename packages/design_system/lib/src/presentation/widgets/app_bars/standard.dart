@@ -19,6 +19,9 @@ class _StandardAppBar extends CommonAppBar {
     return AppBar(
       key: key,
       title: title ?? Text(titleText ?? 'Estacionamento do João'),
+      systemOverlayStyle: context.colorScheme.brightness == Brightness.light
+          ? SystemUiOverlayStyle.dark
+          : SystemUiOverlayStyle.light,
       centerTitle: centerTitle,
       leading: leading,
       actions: actions,

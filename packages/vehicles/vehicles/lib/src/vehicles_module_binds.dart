@@ -9,7 +9,6 @@ abstract class VehiclesModuleBinds {
     i.add<VehicleListViewModel>(
       () => VehicleListViewModel(
         getAllVehiclesUsecase: i.get(),
-        deleteVehicleUsecase: i.get(),
       ),
     );
   }
