@@ -10,11 +10,17 @@ abstract class VehiclesModuleRouting {
 
   static const vehicleListPage = BasePath('/', _root);
   static const errorPage = BasePath('/error', _root);
+  static const updateVehicle = BasePath('/update', _root);
 
   static void routes(RouteManager r) {
     r.child(
       vehicleListPage.path,
       child: (_) => const VehicleListPage(),
+    );
+
+    r.child(
+      updateVehicle.path,
+      child: (_) => UpdateVehiclePage(vehicle: Nav.args.data),
     );
 
     r.child(

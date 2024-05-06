@@ -7,6 +7,7 @@ class _PrimaryButton extends AppButton {
   const _PrimaryButton({
     super.onTap,
     required this.text,
+    super.isLoading,
     this.extended = false,
   }) : super._();
 
@@ -15,13 +16,17 @@ class _PrimaryButton extends AppButton {
     return SizedBox(
       width: extended ? context.screenWidth : null,
       child: FilledButton(
-        onPressed: onTap,
+        onPressed: isLoading ? null : onTap,
         style: ButtonStyle(
           padding: MaterialStatePropertyAll(
             Dimension.sm.verticalPadding + Dimension.md.horizontalPadding,
           ),
         ),
-        child: Text(text.toUpperCase()).primaryButton(context),
+        child: isLoading
+            ? CircularProgressIndicator(
+                color: context.colorScheme.onPrimary,
+              )
+            : Text(text.toUpperCase()).primaryButton(context),
       ),
     );
   }

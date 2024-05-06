@@ -7,6 +7,7 @@ class _TextButton extends AppButton {
   const _TextButton({
     super.onTap,
     required this.text,
+    super.isLoading,
     this.extended = false,
   }) : super._();
 
@@ -15,13 +16,15 @@ class _TextButton extends AppButton {
     return SizedBox(
       width: extended ? context.screenWidth : null,
       child: TextButton(
-        onPressed: onTap,
+        onPressed: isLoading ? null : onTap,
         style: ButtonStyle(
           padding: MaterialStatePropertyAll(
             Dimension.sm.verticalPadding + Dimension.md.horizontalPadding,
           ),
         ),
-        child: Text(text.toUpperCase()).textButton(context),
+        child: isLoading
+            ? const CircularProgressIndicator()
+            : Text(text.toUpperCase()).textButton(context),
       ),
     );
   }

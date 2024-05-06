@@ -5,7 +5,7 @@ import '../repositories/repositories.dart';
 import '../validations/failures/failures.dart';
 
 abstract class ICreateVehicleUsecase {
-  Future<Either<VehicleFailure, Vehicle>> call(VehicleParams params);
+  Future<Either<VehicleFailure, Vehicle>> call(CreateVehicleParams params);
 }
 
 class CreateVehicleUsecase implements ICreateVehicleUsecase {
@@ -14,6 +14,6 @@ class CreateVehicleUsecase implements ICreateVehicleUsecase {
   CreateVehicleUsecase(this._repository);
 
   @override
-  Future<Either<VehicleFailure, Vehicle>> call(VehicleParams params) =>
+  Future<Either<VehicleFailure, Vehicle>> call(CreateVehicleParams params) =>
       _repository.create(params);
 }

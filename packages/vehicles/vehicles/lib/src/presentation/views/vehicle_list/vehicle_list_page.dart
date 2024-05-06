@@ -2,7 +2,7 @@ import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:vehicles/vehicles.dart';
+import 'package:vehicles_commons/vehicles_commons.dart';
 
 import '../../../vehicles_module_routing.dart';
 import 'vehicle_list_view_model.dart';
@@ -88,7 +88,12 @@ class _VehicleListPageState
                   plate: item.plate,
                   name: item.name,
                   onTap: () {
-                    // TODO:
+                    Nav.pushNamed(
+                      VehiclesModuleRouting.updateVehicle,
+                      arguments: item,
+                    ).then((_) {
+                      viewModel.loadPage();
+                    });
                   },
                 );
               },
@@ -119,10 +124,15 @@ class _VehicleListPageState
   @widgetFactory
   Widget _buildBottomNavigator(BuildContext context) {
     return BottomNavigatorActionButtons(
-      primaryButtonText: 'ADICIONAR NOVO VEÍCULO',
-      onTapPrimaryButton: () {
-        // TODO:
-      },
+      primaryButton: AppButton.primary(
+        text: 'ADICIONAR NOVO VEÍCULO',
+        onTap: () {
+          Nav.pushNamed(VehiclesModuleRouting.updateVehicle).then((_) {
+            viewModel.loadPage();
+          });
+        },
+        extended: true,
+      ),
     );
   }
 }

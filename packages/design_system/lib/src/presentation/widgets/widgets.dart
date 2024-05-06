@@ -4,4 +4,5 @@ export './buttons/buttons.dart';
 export './cards/cards.dart';
 export './scaffolds/scaffolds.dart';
 export './shimmer/shimmer_widget.dart';
+export './snackbar/snackbar_extension.dart';
 export './texts/texts.dart';

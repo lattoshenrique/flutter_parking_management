@@ -8,10 +8,8 @@ part 'vehicle_list_view_model.freezed.dart';
 class VehicleListViewModel extends ViewModel<VehicleListViewModelState> {
   final IGetAllVehiclesUsecase _getAllVehiclesUsecase;
 
-  VehicleListViewModel({
-    required IGetAllVehiclesUsecase getAllVehiclesUsecase,
-  })  : _getAllVehiclesUsecase = getAllVehiclesUsecase,
-        super(const VehicleListViewModelState.loading());
+  VehicleListViewModel(this._getAllVehiclesUsecase)
+      : super(const VehicleListViewModelState.loading());
 
   @override
   void initViewModel() {

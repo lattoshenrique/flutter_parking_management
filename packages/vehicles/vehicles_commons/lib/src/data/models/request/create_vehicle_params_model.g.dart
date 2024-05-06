@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'vehicle_params_model.dart';
+part of 'create_vehicle_params_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$VehicleParamsModelImpl _$$VehicleParamsModelImplFromJson(
+_$CreateVehicleParamsModelImpl _$$CreateVehicleParamsModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$VehicleParamsModelImpl(
+    _$CreateVehicleParamsModelImpl(
       name: json['name'] as String,
       plate: json['plate'] as String,
     );
 
-Map<String, dynamic> _$$VehicleParamsModelImplToJson(
-        _$VehicleParamsModelImpl instance) =>
+Map<String, dynamic> _$$CreateVehicleParamsModelImplToJson(
+        _$CreateVehicleParamsModelImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'plate': instance.plate,

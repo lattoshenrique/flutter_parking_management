@@ -4,17 +4,13 @@ import '../../theme/theme.dart';
 import '../buttons/buttons.dart';
 
 class BottomNavigatorActionButtons extends StatelessWidget {
-  final String? primaryButtonText;
-  final VoidCallback? onTapPrimaryButton;
-  final String? secondaryButtonText;
-  final VoidCallback? onTapSecondaryButton;
+  final AppButton? primaryButton;
+  final AppButton? secondaryButton;
 
   const BottomNavigatorActionButtons({
     super.key,
-    this.primaryButtonText,
-    this.onTapPrimaryButton,
-    this.secondaryButtonText,
-    this.onTapSecondaryButton,
+    this.primaryButton,
+    this.secondaryButton,
   });
 
   @override
@@ -45,19 +41,10 @@ class BottomNavigatorActionButtons extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (primaryButtonText != null)
-                AppButton.primary(
-                  text: primaryButtonText!,
-                  onTap: onTapPrimaryButton,
-                  extended: true,
-                ),
-              if (secondaryButtonText != null) ...[
-                if (primaryButtonText != null) Dimension.sm.vertical,
-                AppButton.text(
-                  text: secondaryButtonText!,
-                  onTap: onTapSecondaryButton,
-                  extended: true,
-                ),
+              if (primaryButton != null) primaryButton!,
+              if (secondaryButton != null) ...[
+                if (primaryButton != null) Dimension.sm.vertical,
+                secondaryButton!,
               ],
             ],
           ),

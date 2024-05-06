@@ -8,11 +8,11 @@ const String _kStorageKey = 'vehicles';
 abstract class IVehicleLocalDataSource {
   Future<List<VehicleModel>> getAll();
 
-  Future<VehicleModel> create(VehicleParamsModel params);
+  Future<VehicleModel> create(CreateVehicleParamsModel params);
 
   Future<VehicleModel> update({
     required String id,
-    required VehicleParamsModel params,
+    required UpdateVehicleParamsModel params,
   });
 
   Future<void> delete(String id);
@@ -24,7 +24,7 @@ class VehicleLocalDataSource implements IVehicleLocalDataSource {
   VehicleLocalDataSource(this._storageClient);
 
   @override
-  Future<VehicleModel> create(VehicleParamsModel params) async {
+  Future<VehicleModel> create(CreateVehicleParamsModel params) async {
     final list = List<VehicleModel>.from(await getAll());
 
     final newVehicle = VehicleModel(
@@ -54,13 +54,12 @@ class VehicleLocalDataSource implements IVehicleLocalDataSource {
   @override
   Future<VehicleModel> update({
     required String id,
-    required VehicleParamsModel params,
+    required UpdateVehicleParamsModel params,
   }) async {
     final list = List<VehicleModel>.from(await getAll());
     final vehicleIndex = list.indexWhere((e) => e.id == id);
     final updatedVehicle = list[vehicleIndex].copyWith(
       name: params.name,
-      plate: params.plate,
     );
 
     list[vehicleIndex] = updatedVehicle;

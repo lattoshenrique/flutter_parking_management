@@ -7,7 +7,7 @@ import '../validations/failures/failures.dart';
 abstract class IUpdateVehicleUsecase {
   Future<Either<VehicleFailure, Vehicle>> call({
     required String id,
-    required VehicleParams params,
+    required UpdateVehicleParams params,
   });
 }
 
@@ -19,7 +19,7 @@ class UpdateVehicleUsecase implements IUpdateVehicleUsecase {
   @override
   Future<Either<VehicleFailure, Vehicle>> call({
     required String id,
-    required VehicleParams params,
+    required UpdateVehicleParams params,
   }) =>
       _repository.update(id: id, params: params);
 }

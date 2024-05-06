@@ -34,6 +34,18 @@ extension AppTexts on Text {
     );
   }
 
+  Text snackbar(BuildContext context, SnackbarType type) {
+    return _copyWith(
+      context.textTheme.bodyLarge?.copyWith(
+        color: switch (type) {
+          SnackbarType.error => context.colorScheme.onError,
+          SnackbarType.info => context.colorScheme.onSecondaryContainer,
+          SnackbarType.success => context.colorScheme.onPrimary,
+        },
+      ),
+    );
+  }
+
   Text _copyWith(TextStyle? textStyle) {
     return Text(
       data!,

@@ -8,7 +8,14 @@ abstract class VehiclesModuleBinds {
   static void _viewModels(Injector i) {
     i.add<VehicleListViewModel>(
       () => VehicleListViewModel(
-        getAllVehiclesUsecase: i.get(),
+        i.get(),
+      ),
+    );
+    i.add<UpdateVehicleViewModel>(
+      () => UpdateVehicleViewModel(
+        i.get(),
+        i.get(),
+        i.get(),
       ),
     );
   }

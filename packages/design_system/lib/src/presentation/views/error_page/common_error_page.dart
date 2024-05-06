@@ -32,10 +32,20 @@ class CommonErrorPage extends StatelessWidget {
         ),
       ),
       bottomNavigatorBar: BottomNavigatorActionButtons(
-        primaryButtonText: args.primaryButtonText,
-        secondaryButtonText: args.secondaryButtonText,
-        onTapPrimaryButton: args.onPrimaryButtonPressed,
-        onTapSecondaryButton: args.onSecondaryButtonPressed,
+        primaryButton: args.primaryButtonText != null
+            ? AppButton.primary(
+                text: args.primaryButtonText!,
+                onTap: args.onPrimaryButtonPressed,
+                extended: true,
+              )
+            : null,
+        secondaryButton: args.secondaryButtonText != null
+            ? AppButton.text(
+                text: args.secondaryButtonText!,
+                onTap: args.onSecondaryButtonPressed,
+                extended: true,
+              )
+            : null,
       ),
     );
   }

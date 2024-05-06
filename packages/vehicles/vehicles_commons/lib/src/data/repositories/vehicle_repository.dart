@@ -1,8 +1,7 @@
 import 'package:common_deps/common_deps.dart';
 import 'package:core/core.dart';
 
-import '../../domain/entities/vehicle.dart';
-import '../../domain/entities/vehicle_params.dart';
+import '../../domain/entities/entities.dart';
 
 import '../../domain/repositories/repositories.dart';
 import '../../domain/validations/failures/vehicle_failure.dart';
@@ -17,7 +16,9 @@ class VehicleRepository implements IVehicleRepository {
   final _log = Logger();
 
   @override
-  Future<Either<VehicleFailure, Vehicle>> create(VehicleParams params) async {
+  Future<Either<VehicleFailure, Vehicle>> create(
+    CreateVehicleParams params,
+  ) async {
     try {
       final list = await _localDataSource.getAll();
 
@@ -25,8 +26,8 @@ class VehicleRepository implements IVehicleRepository {
         return const Left(VehicleFailure.plateExists());
       }
 
-      final newVehicle =
-          await _localDataSource.create(VehicleParamsModel.fromEntity(params));
+      final newVehicle = await _localDataSource
+          .create(CreateVehicleParamsModel.fromEntity(params));
       return Right(newVehicle.toEntity());
     } on StorageException catch (_) {
       return const Left(VehicleFailure.storage());
@@ -77,18 +78,12 @@ class VehicleRepository implements IVehicleRepository {
   @override
   Future<Either<VehicleFailure, Vehicle>> update({
     required String id,
-    required VehicleParams params,
+    required UpdateVehicleParams params,
   }) async {
     try {
-      final list = await _localDataSource.getAll();
-
-      if (list.any((e) => e.plate == params.plate)) {
-        return const Left(VehicleFailure.plateExists());
-      }
-
       final updatedVehicle = await _localDataSource.update(
         id: id,
-        params: VehicleParamsModel.fromEntity(params),
+        params: UpdateVehicleParamsModel.fromEntity(params),
       );
       return Right(updatedVehicle.toEntity());
     } on StorageException catch (_) {
