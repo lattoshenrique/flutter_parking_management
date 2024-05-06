@@ -1,0 +1,46 @@
+name: vehicles
+description: "A new Flutter package project."
+version: 0.0.1
+publish_to: "none"
+
+environment:
+  sdk: ">=3.3.4 <4.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  common_deps:
+    git:
+      url: https://github.com/lattoshenrique/flutter_parking_management.git
+      path: packages/common_deps
+      ref: main
+  core:
+    git:
+      url: https://github.com/lattoshenrique/flutter_parking_management.git
+      path: packages/core
+      ref: main
+  design_system:
+    git:
+      url: https://github.com/lattoshenrique/flutter_parking_management.git
+      path: packages/design_system
+      ref: main
+  vehicles_commons:
+    git:
+      url: https://github.com/lattoshenrique/flutter_parking_management.git
+      path: packages/vehicles/vehicles_commons
+      ref: main
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+  freezed: ^2.5.0
+  json_serializable: ^6.7.1
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.9
+
+flutter:
+  uses-material-design: true

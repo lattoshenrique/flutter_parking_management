@@ -2,7 +2,7 @@ import 'package:common_deps/common_deps.dart';
 import 'package:flutter/material.dart';
 
 import '../../domain/domain.dart';
-import '../../presentation/utils.dart';
+import '../../presentation/utils/utils.dart';
 import 'navigation_arguments.dart';
 import 'navigation_route.dart';
 

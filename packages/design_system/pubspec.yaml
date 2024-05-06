@@ -1,7 +1,7 @@
 name: design_system
 description: "A new Flutter package project."
 version: 0.0.1
-publish_to: none
+publish_to: "none"
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -12,14 +12,23 @@ dependencies:
     sdk: flutter
 
   common_deps:
-    path: ../common_deps
+    git:
+      url: https://github.com/lattoshenrique/flutter_parking_management.git
+      path: packages/common_deps
+      ref: main
   core:
-    path: ../core
+    git:
+      url: https://github.com/lattoshenrique/flutter_parking_management.git
+      path: packages/core
+      ref: main
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+
+  freezed: ^2.5.0
+  build_runner: ^2.4.9
 
 flutter:
   uses-material-design: true

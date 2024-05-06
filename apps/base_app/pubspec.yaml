@@ -1,0 +1,54 @@
+name: flutter_parking_management
+description: "A new Flutter project."
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.4 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  common_deps:
+    git:
+      url: https://github.com/lattoshenrique/flutter_parking_management.git
+      path: packages/common_deps
+      ref: main
+  core:
+    git:
+      url: https://github.com/lattoshenrique/flutter_parking_management.git
+      path: packages/core
+      ref: main
+  design_system:
+    git:
+      url: https://github.com/lattoshenrique/flutter_parking_management.git
+      path: packages/design_system
+      ref: main
+  vehicles:
+    git:
+      url: https://github.com/lattoshenrique/flutter_parking_management.git
+      path: packages/vehicles/vehicles
+      ref: main
+  home:
+    git:
+      url: https://github.com/lattoshenrique/flutter_parking_management.git
+      path: packages/home
+      ref: main
+  parking:
+    git:
+      url: https://github.com/lattoshenrique/flutter_parking_management.git
+      path: packages/parking/parking
+      ref: main
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true

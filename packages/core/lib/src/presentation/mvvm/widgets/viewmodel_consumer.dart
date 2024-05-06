@@ -8,8 +8,8 @@ class ViewModelConsumer<VM extends ViewModel<S>, S extends ViewModelState>
   const ViewModelConsumer({
     super.key,
     required VM viewModel,
-    required super.builder,
     required super.listener,
+    required super.builder,
     super.buildWhen,
     super.listenWhen,
   }) : super(

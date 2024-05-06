@@ -1,0 +1,19 @@
+name: flutter_parking_management
+packages:
+  - "apps/**"
+  - "packages/**"
+
+command:
+  bootstrap:
+    usePubspecOverrides: true
+    runPubGetInParallel: false
+  clean:
+    hooks:
+      post: melos exec --flutter --concurrency=1 -- "flutter clean"
+
+scripts:
+  coverage:
+    description: "Running flutter test and generate coverage"
+    steps:
+      - melos exec --flutter --concurrency=1 "flutter test --coverage"
+      - genhtml coverage/lcov.info -o coverage/html
