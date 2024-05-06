@@ -10,3 +10,10 @@ command:
   clean:
     hooks:
       post: melos exec --flutter --concurrency=1 -- "flutter clean"
+
+scripts:
+  coverage:
+    description: "Running flutter test and generate coverage"
+    steps:
+      - melos exec --flutter --concurrency=1 "flutter test --coverage"
+      - genhtml coverage/lcov.info -o coverage/html
