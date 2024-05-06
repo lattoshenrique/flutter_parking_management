@@ -48,7 +48,7 @@ class VehicleLocalDataSource implements IVehicleLocalDataSource {
   @override
   Future<List<VehicleModel>> getAll() async {
     final result = await _storageClient.read(_kStorageKey);
-    return result ?? [];
+    return result != null ? List<VehicleModel>.from(result) : [];
   }
 
   @override

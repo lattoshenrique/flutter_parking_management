@@ -6,6 +6,7 @@ import 'package:vehicles_commons/vehicles_commons.dart';
 
 import '../../../vehicles_module_routing.dart';
 import 'vehicle_list_view_model.dart';
+import 'widgets/widgets.dart';
 
 const kPageTitle = 'Veículos';
 

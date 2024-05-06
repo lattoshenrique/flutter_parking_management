@@ -7,7 +7,8 @@ import '../../../vehicles_module_routing.dart';
 import 'update_vehicle_view_model.dart';
 import 'update_vehicle_view_model_state.dart';
 
-const _kPageName = 'Adicionar Veículo';
+const _kUpdatePageName = 'Atualizar Veículo';
+const _kCreatePageName = 'Adicionar Veículo';
 
 class UpdateVehiclePage extends StatefulWidget {
   final Vehicle? vehicle;
@@ -121,7 +122,7 @@ class _UpdateVehiclePageState
   }) {
     return CommonScaffold.standard(
       appBar: CommonAppBar.standard(
-        titleText: widget.vehicle?.name ?? _kPageName,
+        titleText: widget.vehicle != null ? _kUpdatePageName : _kCreatePageName,
       ),
       body: Padding(
         padding: Dimension.sm.paddingAll,

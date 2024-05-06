@@ -15,6 +15,23 @@ extension AppTexts on Text {
     );
   }
 
+  Text cardTitle1(BuildContext context) {
+    return _copyWith(
+      context.textTheme.titleLarge?.copyWith(
+        color: context.colorScheme.primary,
+        fontWeight: FontWeight.bold,
+      ),
+    );
+  }
+
+  Text cardBody1(BuildContext context) {
+    return _copyWith(
+      context.textTheme.bodyMedium?.copyWith(
+        color: context.colorScheme.onBackground.withOpacity(.7),
+      ),
+    );
+  }
+
   Text primaryButton(BuildContext context) {
     return _copyWith(
       context.textTheme.bodyLarge?.copyWith(

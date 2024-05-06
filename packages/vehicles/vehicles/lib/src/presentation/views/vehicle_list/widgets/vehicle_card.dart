@@ -1,7 +1,5 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-
-import '../../theme/theme.dart';
-import '../shimmer/shimmer.dart';
 
 abstract class VehicleCard extends StatelessWidget {
   const VehicleCard._({

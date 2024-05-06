@@ -12,5 +12,9 @@ abstract class BaseAppModuleRouting {
       VehiclesCommonsModulePaths.root.path,
       module: VehiclesModule(),
     );
+    r.module(
+      HomeModuleRouting.root.path,
+      module: HomeModule(),
+    );
   }
 }

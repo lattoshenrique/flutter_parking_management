@@ -1,5 +1,6 @@
 import 'package:common_deps/common_deps.dart';
 import 'package:core/core.dart';
+import 'package:home/home.dart';
 import 'package:vehicles/vehicles.dart';
 
 import 'presentation/views/welcome_page.dart';

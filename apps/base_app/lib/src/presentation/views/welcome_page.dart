@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:vehicles/vehicles.dart';
+import 'package:home/home.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -14,7 +14,7 @@ class _WelcomePageState extends State<WelcomePage> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 1), () {
-      Nav.navigate(VehiclesModuleRouting.vehicleListPage.completePath);
+      Nav.navigate(HomeModuleRouting.dashBoard.completePath);
     });
   }
 

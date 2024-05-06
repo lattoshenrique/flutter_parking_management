@@ -16,7 +16,7 @@ abstract class ThemeFactory {
 
 ThemeData _buildLight() {
   return ThemeData.from(
-    colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
+    colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
     textTheme: Typography.material2021().black,
     useMaterial3: true,
   );
@@ -25,7 +25,7 @@ ThemeData _buildLight() {
 ThemeData _buildDark() {
   return ThemeData.from(
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.purple,
+      seedColor: Colors.blueGrey,
       brightness: Brightness.dark,
     ),
     textTheme: Typography.material2021().white,
