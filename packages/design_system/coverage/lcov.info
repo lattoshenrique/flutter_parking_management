@@ -1,4 +1,4 @@
-SF:lib\src\presentation\theme\dimension.dart
+SF:lib/src/presentation/theme/dimension.dart
 DA:26,4
 DA:30,2
 DA:32,0
@@ -21,12 +21,12 @@ DA:63,3
 LF:19
 LH:13
 end_of_record
-SF:lib\src\presentation\theme\responsive\responsive_extension.dart
+SF:lib/src/presentation/theme/responsive/responsive_extension.dart
 DA:4,2
 LF:1
 LH:1
 end_of_record
-SF:lib\src\presentation\theme\responsive\size_config.dart
+SF:lib/src/presentation/theme/responsive/size_config.dart
 DA:7,0
 DA:12,0
 DA:13,0
@@ -44,7 +44,7 @@ DA:50,0
 LF:14
 LH:0
 end_of_record
-SF:lib\src\presentation\theme\theme_extension.dart
+SF:lib/src/presentation/theme/theme_extension.dart
 DA:4,2
 DA:5,3
 DA:6,3
@@ -53,7 +53,7 @@ DA:8,0
 LF:5
 LH:4
 end_of_record
-SF:lib\src\presentation\theme\theme_factory.dart
+SF:lib/src/presentation/theme/theme_factory.dart
 DA:9,0
 DA:11,0
 DA:12,0
@@ -68,7 +68,7 @@ DA:31,0
 LF:11
 LH:0
 end_of_record
-SF:lib\src\presentation\views\error_page\common_error_page.dart
+SF:lib/src/presentation/views/error_page/common_error_page.dart
 DA:10,1
 DA:15,1
 DA:17,1
@@ -113,7 +113,7 @@ DA:83,1
 LF:41
 LH:41
 end_of_record
-SF:lib\src\presentation\widgets\app_bars\common_app_bar.dart
+SF:lib/src/presentation/widgets/app_bars/common_app_bar.dart
 DA:19,1
 DA:31,0
 DA:32,0
@@ -121,7 +121,7 @@ DA:33,0
 LF:4
 LH:1
 end_of_record
-SF:lib\src\presentation\widgets\app_bars\standard.dart
+SF:lib/src/presentation/widgets/app_bars/standard.dart
 DA:7,1
 DA:17,0
 DA:19,0
@@ -139,7 +139,7 @@ DA:34,0
 LF:14
 LH:1
 end_of_record
-SF:lib\src\presentation\widgets\bottom_navigator\bottom_navigator_action_buttons.dart
+SF:lib/src/presentation/widgets/bottom_navigator/bottom_navigator_action_buttons.dart
 DA:10,1
 DA:16,1
 DA:18,1
@@ -167,7 +167,7 @@ DA:47,2
 LF:24
 LH:24
 end_of_record
-SF:lib\src\presentation\widgets\bottom_sheet\bottom_sheet_extension.dart
+SF:lib/src/presentation/widgets/bottom_sheet/bottom_sheet_extension.dart
 DA:7,0
 DA:10,0
 DA:11,0
@@ -189,7 +189,7 @@ DA:32,0
 LF:18
 LH:0
 end_of_record
-SF:lib\src\presentation\widgets\buttons\primary_button.dart
+SF:lib/src/presentation/widgets/buttons/primary_button.dart
 DA:7,1
 DA:12,1
 DA:14,1
@@ -207,7 +207,7 @@ DA:29,4
 LF:14
 LH:12
 end_of_record
-SF:lib\src\presentation\widgets\buttons\text_button.dart
+SF:lib/src/presentation/widgets/buttons/text_button.dart
 DA:8,1
 DA:14,1
 DA:16,1
@@ -223,17 +223,17 @@ DA:29,5
 LF:12
 LH:12
 end_of_record
-SF:lib\src\presentation\widgets\buttons\app_button.dart
+SF:lib/src/presentation/widgets/buttons/app_button.dart
 DA:13,1
 LF:1
 LH:1
 end_of_record
-SF:lib\src\presentation\widgets\scaffolds\common_scaffold.dart
+SF:lib/src/presentation/widgets/scaffolds/common_scaffold.dart
 DA:16,1
 LF:1
 LH:1
 end_of_record
-SF:lib\src\presentation\widgets\scaffolds\standard.dart
+SF:lib/src/presentation/widgets/scaffolds/standard.dart
 DA:6,1
 DA:15,1
 DA:17,1
@@ -248,7 +248,7 @@ DA:27,1
 LF:11
 LH:11
 end_of_record
-SF:lib\src\presentation\widgets\shimmer\shimmer_widget.dart
+SF:lib/src/presentation/widgets/shimmer/shimmer_widget.dart
 DA:11,0
 DA:18,0
 DA:20,0
@@ -259,7 +259,7 @@ DA:24,0
 LF:7
 LH:0
 end_of_record
-SF:lib\src\presentation\widgets\snackbar\snackbar_extension.dart
+SF:lib/src/presentation/widgets/snackbar/snackbar_extension.dart
 DA:13,0
 DA:14,0
 DA:15,0
@@ -273,7 +273,7 @@ DA:25,0
 LF:10
 LH:0
 end_of_record
-SF:lib\src\presentation\widgets\texts\app_texts_extension.dart
+SF:lib/src/presentation/widgets/texts/app_texts_extension.dart
 DA:6,1
 DA:7,3
 DA:10,0
