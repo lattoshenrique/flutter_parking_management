@@ -8,7 +8,7 @@ import 'update_vehicle_view_model.dart';
 import 'update_vehicle_view_model_state.dart';
 
 const _kUpdatePageName = 'Atualizar Veículo';
-const _kCreatePageName = 'Adicionar Veículo';
+const _kCreatePageName = 'Cadastrar Veículo';
 
 class UpdateVehiclePage extends StatefulWidget {
   final Vehicle? vehicle;

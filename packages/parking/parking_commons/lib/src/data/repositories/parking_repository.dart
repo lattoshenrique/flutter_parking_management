@@ -1,5 +1,6 @@
 import 'package:common_deps/common_deps.dart';
 import 'package:core/core.dart';
+import 'package:vehicles_commons/vehicles_commons.dart';
 
 import '../../domain/entities/create_parking_order_params.dart';
 import '../../domain/entities/create_parking_params.dart';
@@ -63,7 +64,6 @@ class ParkingRepository implements IParkingRepository {
   Future<Either<ParkingFailure, List<Parking>>> getAll() async {
     try {
       final res = await _localDataSource.getAll();
-
       return Right(res.map((e) => e.toEntity()).toList());
     } on StorageException catch (_) {
       return const Left(ParkingFailure.storage());
@@ -95,6 +95,35 @@ class ParkingRepository implements IParkingRepository {
     } on Exception catch (e, s) {
       _log.e(
         'Error on Update Order',
+        error: e,
+        stackTrace: s,
+      );
+      return const Left(ParkingFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Either<ParkingFailure, List<Vehicle>>>
+      getCurrentVehiclesParking() async {
+    try {
+      if (_localDataSource.currentVehiclesParking.isNotEmpty) {
+        return Right(
+          _localDataSource.currentVehiclesParking
+              .map((e) => e.toEntity())
+              .toList(),
+        );
+      }
+      await _localDataSource.getAll();
+      return Right(
+        _localDataSource.currentVehiclesParking
+            .map((e) => e.toEntity())
+            .toList(),
+      );
+    } on StorageException catch (_) {
+      return const Left(ParkingFailure.storage());
+    } on Exception catch (e, s) {
+      _log.e(
+        'Error on Get Current Vehicles Parking',
         error: e,
         stackTrace: s,
       );

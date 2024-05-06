@@ -43,6 +43,9 @@ abstract class ParkingCommonsModuleBinds {
     i.addLazySingleton<IGetAllParkingUsecase>(
       () => GetAllParkingUsecase(i.get()),
     );
+    i.addLazySingleton<IGetCurrentVehiclesParkingUsecase>(
+      () => GetCurrentVehiclesParkingUsecase(i.get()),
+    );
     i.addLazySingleton<IUpdateOrderUsecase>(
       () => UpdateOrderUsecase(i.get()),
     );

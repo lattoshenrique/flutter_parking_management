@@ -20,6 +20,11 @@ abstract class ParkingModuleRouting {
     );
 
     r.child(
+      parkingView.path,
+      child: (_) => ParkingViewPage(parking: Nav.args.data),
+    );
+
+    r.child(
       errorPage.path,
       child: (_) => CommonErrorPage(args: Nav.args.data),
     );

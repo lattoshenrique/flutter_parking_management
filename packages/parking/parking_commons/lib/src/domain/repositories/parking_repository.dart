@@ -1,4 +1,5 @@
 import 'package:common_deps/common_deps.dart';
+import 'package:vehicles_commons/vehicles_commons.dart';
 
 import '../entities/entities.dart';
 import '../validations/failures/failures.dart';
@@ -17,4 +18,6 @@ abstract class IParkingRepository {
     required String orderId,
     required UpdateParkingOrderParams params,
   });
+
+  Future<Either<ParkingFailure, List<Vehicle>>> getCurrentVehiclesParking();
 }

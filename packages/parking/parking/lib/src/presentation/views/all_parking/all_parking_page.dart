@@ -191,7 +191,14 @@ class _AllParkingPageState
                         final item = itemList[gridIndex];
                         return ParkingWidget.loaded(
                           parking: item,
-                          onTap: () {},
+                          onTap: () {
+                            Nav.pushNamed(
+                              ParkingModuleRouting.parkingView.completePath,
+                              arguments: item,
+                            ).then((_) {
+                              viewModel.loadPage();
+                            });
+                          },
                         );
                       },
                     ),

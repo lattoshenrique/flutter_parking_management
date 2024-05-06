@@ -1,5 +1,6 @@
 import 'package:common_deps/common_deps.dart';
 import 'package:core/core.dart';
+import 'package:vehicles_commons/vehicles_commons.dart';
 
 import '../../models/models.dart';
 
@@ -19,12 +20,16 @@ abstract class IParkingLocalDataSource {
     required String orderId,
     required UpdateParkingOrderParamsModel params,
   });
+
+  List<VehicleModel> get currentVehiclesParking;
 }
 
 class ParkingLocalDataSource implements IParkingLocalDataSource {
   final IStorageClient<List<ParkingModel>> _storageClient;
 
-  ParkingLocalDataSource(this._storageClient);
+  ParkingLocalDataSource(
+    this._storageClient,
+  );
 
   @override
   Future<ParkingModel> create(CreateParkingParamsModel params) async {
@@ -37,6 +42,7 @@ class ParkingLocalDataSource implements IParkingLocalDataSource {
     list.add(newObject);
 
     await _storageClient.save(_kStorageKey, list);
+    _updateCurrentVehiclesParking(list);
     return newObject;
   }
 
@@ -59,13 +65,19 @@ class ParkingLocalDataSource implements IParkingLocalDataSource {
     list[parkingIndex] = list[parkingIndex].copyWith(orders: orders);
 
     await _storageClient.save(_kStorageKey, list);
+    _updateCurrentVehiclesParking(list);
     return newObject;
   }
 
   @override
   Future<List<ParkingModel>> getAll() async {
     final result = await _storageClient.read(_kStorageKey);
-    return result != null ? List<ParkingModel>.from(result) : [];
+
+    final List<ParkingModel> parkingList =
+        result != null ? List<ParkingModel>.from(result) : [];
+
+    _updateCurrentVehiclesParking(parkingList);
+    return parkingList;
   }
 
   @override
@@ -79,12 +91,42 @@ class ParkingLocalDataSource implements IParkingLocalDataSource {
     final orderIndex =
         list[parkingIndex].orders.indexWhere((e) => e.id == orderId);
 
-    list[parkingIndex].orders[orderIndex] =
-        list[parkingIndex].orders[orderIndex].copyWith(
-              departureDate: params.departureDate,
-            );
+    final updatedOrder = list[parkingIndex].orders[orderIndex].copyWith(
+          departureDate: params.departureDate,
+        );
 
-    await _storageClient.save(_kStorageKey, list);
-    return list[parkingIndex].orders[orderIndex];
+    final newOrderList = List<ParkingOrderModel>.from(
+      list[parkingIndex]
+          .orders
+          .whereNotIndexed((index, _) => index == orderIndex),
+    )..add(updatedOrder);
+
+    final updatedParking = list[parkingIndex].copyWith(orders: newOrderList);
+
+    final newList = List<ParkingModel>.from(
+      list.whereNotIndexed((index, _) => index == parkingIndex),
+    )..add(updatedParking);
+
+    await _storageClient.save(_kStorageKey, newList);
+    _updateCurrentVehiclesParking(newList);
+    return updatedOrder;
   }
+
+  void _updateCurrentVehiclesParking(List<ParkingModel> parkingList) {
+    for (final parking in parkingList) {
+      for (final order in parking.orders) {
+        if (order.departureDate == null) {
+          _currentVehiclesParking.add(order.vehicle);
+        } else if (order.departureDate != null &&
+            _currentVehiclesParking.contains(order.vehicle)) {
+          _currentVehiclesParking.remove(order.vehicle);
+        }
+      }
+    }
+  }
+
+  @override
+  List<VehicleModel> get currentVehiclesParking => _currentVehiclesParking;
+
+  final List<VehicleModel> _currentVehiclesParking = [];
 }

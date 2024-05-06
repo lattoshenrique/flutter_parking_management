@@ -28,5 +28,6 @@ abstract class AppButton extends StatelessWidget {
     required String text,
     bool extended,
     bool isLoading,
+    Widget? child,
   }) = _TextButton;
 }

@@ -12,5 +12,13 @@ abstract class ParkingModuleBinds {
         i.get(),
       ),
     );
+    i.add<ParkingViewViewModel>(
+      () => ParkingViewViewModel(
+        i.get(),
+        i.get(),
+        i.get(),
+        i.get(),
+      ),
+    );
   }
 }

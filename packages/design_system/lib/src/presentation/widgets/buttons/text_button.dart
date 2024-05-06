@@ -3,12 +3,14 @@ part of 'app_button.dart';
 class _TextButton extends AppButton {
   final String text;
   final bool extended;
+  final Widget? child;
 
   const _TextButton({
     super.onTap,
     required this.text,
     super.isLoading,
     this.extended = false,
+    this.child,
   }) : super._();
 
   @override
@@ -24,7 +26,7 @@ class _TextButton extends AppButton {
         ),
         child: isLoading
             ? const CircularProgressIndicator()
-            : Text(text.toUpperCase()).textButton(context),
+            : child ?? Text(text.toUpperCase()).textButton(context),
       ),
     );
   }

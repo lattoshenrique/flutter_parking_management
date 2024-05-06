@@ -94,7 +94,7 @@ class _VehicleListPageState
                   name: item.name,
                   onTap: () {
                     Nav.pushNamed(
-                      VehiclesModuleRouting.setVehicle,
+                      VehiclesCommonsModulePaths.setVehicle,
                       arguments: item,
                     ).then((_) {
                       viewModel.loadPage();
@@ -130,9 +130,9 @@ class _VehicleListPageState
   Widget _buildBottomNavigator(BuildContext context) {
     return BottomNavigatorActionButtons(
       primaryButton: AppButton.primary(
-        text: 'ADICIONAR NOVO VEÍCULO',
+        text: 'CADASTRAR NOVO VEÍCULO',
         onTap: () {
-          Nav.pushNamed(VehiclesModuleRouting.setVehicle).then((_) {
+          Nav.pushNamed(VehiclesCommonsModulePaths.setVehicle).then((_) {
             viewModel.loadPage();
           });
         },

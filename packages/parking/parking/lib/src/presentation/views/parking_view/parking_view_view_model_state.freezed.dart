@@ -89,6 +89,10 @@ abstract class _$$LoadingParkingViewViewModelStateImplCopyWith<$Res> {
           _$LoadingParkingViewViewModelStateImpl value,
           $Res Function(_$LoadingParkingViewViewModelStateImpl) then) =
       __$$LoadingParkingViewViewModelStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Parking parking});
+
+  $ParkingCopyWith<$Res> get parking;
 }
 
 /// @nodoc
@@ -100,34 +104,182 @@ class __$$LoadingParkingViewViewModelStateImplCopyWithImpl<$Res>
       _$LoadingParkingViewViewModelStateImpl _value,
       $Res Function(_$LoadingParkingViewViewModelStateImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? parking = null,
+  }) {
+    return _then(_$LoadingParkingViewViewModelStateImpl(
+      null == parking
+          ? _value.parking
+          : parking // ignore: cast_nullable_to_non_nullable
+              as Parking,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ParkingCopyWith<$Res> get parking {
+    return $ParkingCopyWith<$Res>(_value.parking, (value) {
+      return _then(_value.copyWith(parking: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$LoadingParkingViewViewModelStateImpl
     implements LoadingParkingViewViewModelState {
-  const _$LoadingParkingViewViewModelStateImpl();
+  const _$LoadingParkingViewViewModelStateImpl(this.parking);
+
+  @override
+  final Parking parking;
 
   @override
   String toString() {
-    return 'ParkingViewViewModelState.loading()';
+    return 'ParkingViewViewModelState.loading(parking: $parking)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadingParkingViewViewModelStateImpl);
+            other is _$LoadingParkingViewViewModelStateImpl &&
+            (identical(other.parking, parking) || other.parking == parking));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, parking);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadingParkingViewViewModelStateImplCopyWith<
+          _$LoadingParkingViewViewModelStateImpl>
+      get copyWith => __$$LoadingParkingViewViewModelStateImplCopyWithImpl<
+          _$LoadingParkingViewViewModelStateImpl>(this, _$identity);
 }
 
 abstract class LoadingParkingViewViewModelState
     implements ParkingViewViewModelState {
-  const factory LoadingParkingViewViewModelState() =
+  const factory LoadingParkingViewViewModelState(final Parking parking) =
       _$LoadingParkingViewViewModelStateImpl;
+
+  Parking get parking;
+  @JsonKey(ignore: true)
+  _$$LoadingParkingViewViewModelStateImplCopyWith<
+          _$LoadingParkingViewViewModelStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessParkingViewViewModelStateImplCopyWith<$Res> {
+  factory _$$SuccessParkingViewViewModelStateImplCopyWith(
+          _$SuccessParkingViewViewModelStateImpl value,
+          $Res Function(_$SuccessParkingViewViewModelStateImpl) then) =
+      __$$SuccessParkingViewViewModelStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Parking parking, List<Vehicle> vehicles});
+
+  $ParkingCopyWith<$Res> get parking;
+}
+
+/// @nodoc
+class __$$SuccessParkingViewViewModelStateImplCopyWithImpl<$Res>
+    extends _$ParkingViewViewModelStateCopyWithImpl<$Res,
+        _$SuccessParkingViewViewModelStateImpl>
+    implements _$$SuccessParkingViewViewModelStateImplCopyWith<$Res> {
+  __$$SuccessParkingViewViewModelStateImplCopyWithImpl(
+      _$SuccessParkingViewViewModelStateImpl _value,
+      $Res Function(_$SuccessParkingViewViewModelStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? parking = null,
+    Object? vehicles = null,
+  }) {
+    return _then(_$SuccessParkingViewViewModelStateImpl(
+      parking: null == parking
+          ? _value.parking
+          : parking // ignore: cast_nullable_to_non_nullable
+              as Parking,
+      vehicles: null == vehicles
+          ? _value._vehicles
+          : vehicles // ignore: cast_nullable_to_non_nullable
+              as List<Vehicle>,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ParkingCopyWith<$Res> get parking {
+    return $ParkingCopyWith<$Res>(_value.parking, (value) {
+      return _then(_value.copyWith(parking: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$SuccessParkingViewViewModelStateImpl
+    implements SuccessParkingViewViewModelState {
+  const _$SuccessParkingViewViewModelStateImpl(
+      {required this.parking, final List<Vehicle> vehicles = const []})
+      : _vehicles = vehicles;
+
+  @override
+  final Parking parking;
+  final List<Vehicle> _vehicles;
+  @override
+  @JsonKey()
+  List<Vehicle> get vehicles {
+    if (_vehicles is EqualUnmodifiableListView) return _vehicles;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_vehicles);
+  }
+
+  @override
+  String toString() {
+    return 'ParkingViewViewModelState.success(parking: $parking, vehicles: $vehicles)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessParkingViewViewModelStateImpl &&
+            (identical(other.parking, parking) || other.parking == parking) &&
+            const DeepCollectionEquality().equals(other._vehicles, _vehicles));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, parking, const DeepCollectionEquality().hash(_vehicles));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessParkingViewViewModelStateImplCopyWith<
+          _$SuccessParkingViewViewModelStateImpl>
+      get copyWith => __$$SuccessParkingViewViewModelStateImplCopyWithImpl<
+          _$SuccessParkingViewViewModelStateImpl>(this, _$identity);
+}
+
+abstract class SuccessParkingViewViewModelState
+    implements ParkingViewViewModelState {
+  const factory SuccessParkingViewViewModelState(
+      {required final Parking parking,
+      final List<Vehicle> vehicles}) = _$SuccessParkingViewViewModelStateImpl;
+
+  Parking get parking;
+  List<Vehicle> get vehicles;
+  @JsonKey(ignore: true)
+  _$$SuccessParkingViewViewModelStateImplCopyWith<
+          _$SuccessParkingViewViewModelStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
