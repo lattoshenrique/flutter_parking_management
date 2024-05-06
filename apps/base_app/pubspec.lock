@@ -308,6 +308,20 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.1"
+  parking:
+    dependency: "direct main"
+    description:
+      path: "../../packages/parking/parking"
+      relative: true
+    source: path
+    version: "0.0.1"
+  parking_commons:
+    dependency: "direct overridden"
+    description:
+      path: "../../packages/parking/parking_commons"
+      relative: true
+    source: path
+    version: "0.0.1"
   path:
     dependency: transitive
     description:

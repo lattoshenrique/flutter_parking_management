@@ -7,6 +7,8 @@
       <module fileurl="file://$PROJECT_DIR$/packages/design_system/melos_design_system.iml" filepath="$PROJECT_DIR$/packages/design_system/melos_design_system.iml" />
       <module fileurl="file://$PROJECT_DIR$/apps/base_app/melos_flutter_parking_management.iml" filepath="$PROJECT_DIR$/apps/base_app/melos_flutter_parking_management.iml" />
       <module fileurl="file://$PROJECT_DIR$/packages/home/melos_home.iml" filepath="$PROJECT_DIR$/packages/home/melos_home.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/parking/parking/melos_parking.iml" filepath="$PROJECT_DIR$/packages/parking/parking/melos_parking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/parking/parking_commons/melos_parking_commons.iml" filepath="$PROJECT_DIR$/packages/parking/parking_commons/melos_parking_commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/packages/vehicles/vehicles/melos_vehicles.iml" filepath="$PROJECT_DIR$/packages/vehicles/vehicles/melos_vehicles.iml" />
       <module fileurl="file://$PROJECT_DIR$/packages/vehicles/vehicles_commons/melos_vehicles_commons.iml" filepath="$PROJECT_DIR$/packages/vehicles/vehicles_commons/melos_vehicles_commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/melos_flutter_parking_management.iml" filepath="$PROJECT_DIR$/melos_flutter_parking_management.iml" />
