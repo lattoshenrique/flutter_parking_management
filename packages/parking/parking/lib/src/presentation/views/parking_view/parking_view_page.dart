@@ -54,6 +54,13 @@ class _ParkingViewPageState
           arguments: args,
         );
         break;
+      case UpdateOrderParkingViewViewModelState():
+        Nav.pop();
+        context.showSnackbar(
+          'Ordem executada com sucesso!',
+          type: SnackbarType.success,
+        );
+        break;
       default:
         break;
     }
@@ -176,13 +183,13 @@ class _ParkingViewPageState
         if (vehicles.isNotEmpty) ...[
           Expanded(
             child: ListView.separated(
+              shrinkWrap: true,
               itemCount: vehicles.length,
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
                 final item = vehicles[index];
 
                 return ListTile(
-                  focusColor: Colors.red,
                   visualDensity: VisualDensity.compact,
                   title: Text(item.name).cardTitle1Inversed(context),
                   subtitle: Text(item.plate).cardBody2Inverted(context),
@@ -219,23 +226,56 @@ class _ParkingViewPageState
     final parking = parkingObj ?? widget.parking;
 
     final hasOrders = parking.orders.isNotEmpty;
-    final hasOpenOrder =
-        hasOrders && parking.orders.any((e) => e.departureDate == null);
+
+    final hasOpenOrder = hasOrders && parking.openOrder != null;
 
     return CommonScaffold.standard(
       extendBody: true,
       appBar: CommonAppBar.standard(
         titleText: parking.name,
+        removeEffectOnScroll: true,
       ),
       body: Padding(
         padding: Dimension.sm.paddingAll,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (parking.orders.isEmpty)
+            if (hasOpenOrder) ...[
+              const Text('Ocupando no momento').pageTitle2(context),
+              Dimension.sm.vertical,
+              _buildListTileVehicle(parking.openOrder!),
+              Dimension.lg.vertical,
+            ],
+            if (parking.completedOrders.isEmpty)
               const Text(
-                'Ainda não há registros de entradas e saídas de veículos para essa vaga.',
-              ).pageSubTitle1(context),
+                'Ainda não há histórico de entradas + saídas de veículos para essa vaga.',
+              ).pageSubTitle1(context)
+            else ...[
+              Text('Histórico (${parking.completedOrders.length})')
+                  .pageTitle2(context),
+              Dimension.sm.vertical,
+              Expanded(
+                child: ListView.separated(
+                  shrinkWrap: true,
+                  padding: EdgeInsets.zero,
+                  physics: const BouncingScrollPhysics(),
+                  itemCount: parking.completedOrders.length,
+                  itemBuilder: (context, index) {
+                    final item = parking.completedOrders[index];
+
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _buildListTileVehicle(item, index: index),
+                        if (index + 1 == parking.completedOrders.length)
+                          const Dimension(15).vertical,
+                      ],
+                    );
+                  },
+                  separatorBuilder: (context, index) => const Divider(),
+                ),
+              ),
+            ],
           ],
         ),
       ),
@@ -260,6 +300,28 @@ class _ParkingViewPageState
             );
           },
         ),
+      ),
+    );
+  }
+
+  @widgetFactory
+  Widget _buildListTileVehicle(ParkingOrder item, {int? index}) {
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      style: ListTileStyle.list,
+      leading: index != null ? Text('${index + 1}') : null,
+      title: Text('${item.vehicle.name} [${item.vehicle.plate}]'),
+      subtitle: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Entrada: ${item.entryDate.commonFormattedDateTime}',
+          ),
+          if (item.departureDate != null)
+            Text(
+              'Saída: ${item.departureDate!.commonFormattedDateTime}',
+            ),
+        ],
       ),
     );
   }

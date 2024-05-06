@@ -1,5 +1,5 @@
+import 'package:common_deps/common_deps.dart';
 import 'package:core/core.dart';
-import 'package:uuid/uuid.dart';
 
 import '../../models/models.dart';
 
@@ -48,7 +48,10 @@ class VehicleLocalDataSource implements IVehicleLocalDataSource {
   @override
   Future<List<VehicleModel>> getAll() async {
     final result = await _storageClient.read(_kStorageKey);
-    return result != null ? List<VehicleModel>.from(result) : [];
+
+    if (result == null) return [];
+
+    return (result as List).cast<VehicleModel>();
   }
 
   @override

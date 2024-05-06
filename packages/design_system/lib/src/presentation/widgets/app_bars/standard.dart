@@ -2,10 +2,12 @@ part of 'common_app_bar.dart';
 
 class _StandardAppBar extends CommonAppBar {
   final String? titleText;
+  final bool removeEffectOnScroll;
 
   const _StandardAppBar({
     super.key,
     this.titleText,
+    this.removeEffectOnScroll = false,
     super.title,
     super.centerTitle,
     super.leading,
@@ -17,6 +19,9 @@ class _StandardAppBar extends CommonAppBar {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      notificationPredicate: removeEffectOnScroll
+          ? (_) => false
+          : defaultScrollNotificationPredicate,
       key: key,
       title: title ?? Text(titleText ?? 'Estacionamento do João'),
       systemOverlayStyle: context.colorScheme.brightness == Brightness.light

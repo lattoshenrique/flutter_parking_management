@@ -1,7 +1,7 @@
 import 'package:common_deps/common_deps.dart';
 
 import '../../domain/domain.dart';
-import '../../presentation/utils.dart';
+import '../../presentation/utils/utils.dart';
 
 class ModularDependencyManager implements DependencyManager {
   ModularDependencyManager._();

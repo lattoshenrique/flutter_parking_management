@@ -62,9 +62,14 @@ class ParkingLocalDataSource implements IParkingLocalDataSource {
     final orders = List<ParkingOrderModel>.from(list[parkingIndex].orders);
     orders.add(newObject);
 
-    list[parkingIndex] = list[parkingIndex].copyWith(orders: orders);
+    final newparking = list[parkingIndex].copyWith(orders: orders);
+
+    list
+      ..removeAt(parkingIndex)
+      ..add(newparking);
 
     await _storageClient.save(_kStorageKey, list);
+
     _updateCurrentVehiclesParking(list);
     return newObject;
   }
@@ -72,9 +77,20 @@ class ParkingLocalDataSource implements IParkingLocalDataSource {
   @override
   Future<List<ParkingModel>> getAll() async {
     final result = await _storageClient.read(_kStorageKey);
+    if (result == null) return [];
 
-    final List<ParkingModel> parkingList =
-        result != null ? List<ParkingModel>.from(result) : [];
+    final parkingList = (result as List).cast<ParkingModel>()
+      ..sort((a, b) {
+        String letter(String value) => value.substring(0, 1);
+        int number(String value) => int.parse(value.substring(1));
+
+        final int compareLetter = letter(a.name).compareTo(letter(b.name));
+        if (compareLetter != 0) {
+          return compareLetter;
+        }
+
+        return number(a.name).compareTo(number(b.name));
+      });
 
     _updateCurrentVehiclesParking(parkingList);
     return parkingList;
@@ -113,13 +129,12 @@ class ParkingLocalDataSource implements IParkingLocalDataSource {
   }
 
   void _updateCurrentVehiclesParking(List<ParkingModel> parkingList) {
+    _currentVehiclesParking.clear();
+
     for (final parking in parkingList) {
       for (final order in parking.orders) {
         if (order.departureDate == null) {
           _currentVehiclesParking.add(order.vehicle);
-        } else if (order.departureDate != null &&
-            _currentVehiclesParking.contains(order.vehicle)) {
-          _currentVehiclesParking.remove(order.vehicle);
         }
       }
     }

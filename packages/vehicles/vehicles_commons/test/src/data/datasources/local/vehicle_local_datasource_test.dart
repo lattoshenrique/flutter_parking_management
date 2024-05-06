@@ -1,7 +1,7 @@
+import 'package:common_deps/common_deps.dart';
 import 'package:common_deps/common_test_deps.dart';
 import 'package:core/core.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:uuid/uuid.dart';
 import 'package:vehicles_commons/vehicles_commons.dart';
 
 class MockStorageClient extends Mock

@@ -30,16 +30,7 @@ class ParkingViewViewModel extends ViewModel<ParkingViewViewModelState> {
       return;
     }
 
-    final parkingOrder = res.toRight();
-    final parkingOrders = List<ParkingOrder>.from(parking.orders);
-    parkingOrders.add(parkingOrder);
-
-    emit(
-      ParkingViewViewModelState.success(
-        parking: parking.copyWith(orders: parkingOrders),
-        vehicles: _vehicles,
-      ),
-    );
+    emit(const ParkingViewViewModelState.createOrderSuccess());
   }
 
   void getVehicles(Parking parking) async {
@@ -90,16 +81,6 @@ class ParkingViewViewModel extends ViewModel<ParkingViewViewModelState> {
       return;
     }
 
-    final parkingOrder = res.toRight();
-    final parkingOrders =
-        List<ParkingOrder>.from(parking.orders.where((e) => e.id != orderId));
-    parkingOrders.add(parkingOrder);
-
-    emit(
-      ParkingViewViewModelState.success(
-        parking: parking.copyWith(orders: parkingOrders),
-        vehicles: _vehicles,
-      ),
-    );
+    emit(const ParkingViewViewModelState.createOrderSuccess());
   }
 }

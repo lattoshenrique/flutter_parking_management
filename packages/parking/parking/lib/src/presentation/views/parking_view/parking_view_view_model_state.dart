@@ -19,6 +19,9 @@ sealed class ParkingViewViewModelState extends ViewModelState
     @Default([]) List<Vehicle> vehicles,
   }) = SuccessParkingViewViewModelState;
 
+  const factory ParkingViewViewModelState.createOrderSuccess() =
+      UpdateOrderParkingViewViewModelState;
+
   const factory ParkingViewViewModelState.error() =
       ErrorParkingViewViewModelState;
 }

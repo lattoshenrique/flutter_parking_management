@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../utils.dart';
+import '../utils/utils.dart';
 import 'viewmodel.dart';
 
 abstract class ViewState<S extends StatefulWidget, M extends ViewModel>

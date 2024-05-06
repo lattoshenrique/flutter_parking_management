@@ -7,6 +7,10 @@ extension AppTexts on Text {
     return copyWith(context.textTheme.headlineLarge);
   }
 
+  Text pageTitle2(BuildContext context) {
+    return copyWith(context.textTheme.headlineMedium);
+  }
+
   Text pageSubTitle1(BuildContext context) {
     return copyWith(
       context.textTheme.titleLarge?.copyWith(

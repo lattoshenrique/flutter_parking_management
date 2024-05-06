@@ -5,6 +5,7 @@ import '../../theme/theme.dart';
 
 extension BottomSheetExtension on BuildContext {
   void showBottomSheet({required Widget child}) => showModalBottomSheet(
+        backgroundColor: Colors.transparent,
         context: this,
         builder: (context) => Container(
           width: context.screenWidth,

@@ -42,5 +42,6 @@ abstract class CommonAppBar extends StatelessWidget
     List<Widget>? actions,
     double? toolbarHeight,
     PreferredSizeWidget? bottom,
+    bool removeEffectOnScroll,
   }) = _StandardAppBar;
 }

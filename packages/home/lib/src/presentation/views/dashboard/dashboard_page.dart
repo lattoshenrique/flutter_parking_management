@@ -53,8 +53,7 @@ class _DashboardpageState extends State<Dashboardpage> {
                 HomeCardSelector(
                   icon: Icons.local_shipping_outlined,
                   title: 'Veículos',
-                  description:
-                      'Adicione, atualize ou exclua veículos. Visualize se o veículo está ocupando alguma vaga no estacionamento.',
+                  description: 'Adicione, atualize ou exclua veículos.',
                   onTap: () {
                     Nav.pushNamed(VehiclesCommonsModulePaths.root.path);
                   },

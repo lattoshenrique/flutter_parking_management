@@ -110,12 +110,13 @@ class __$$ParkingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ParkingImpl implements _Parking {
+class _$ParkingImpl extends _Parking {
   const _$ParkingImpl(
       {required this.id,
       required this.name,
       final List<ParkingOrder> orders = const []})
-      : _orders = orders;
+      : _orders = orders,
+        super._();
 
   @override
   final String id;
@@ -156,11 +157,12 @@ class _$ParkingImpl implements _Parking {
       __$$ParkingImplCopyWithImpl<_$ParkingImpl>(this, _$identity);
 }
 
-abstract class _Parking implements Parking {
+abstract class _Parking extends Parking {
   const factory _Parking(
       {required final String id,
       required final String name,
       final List<ParkingOrder> orders}) = _$ParkingImpl;
+  const _Parking._() : super._();
 
   @override
   String get id;

@@ -283,6 +283,53 @@ abstract class SuccessParkingViewViewModelState
 }
 
 /// @nodoc
+abstract class _$$UpdateOrderParkingViewViewModelStateImplCopyWith<$Res> {
+  factory _$$UpdateOrderParkingViewViewModelStateImplCopyWith(
+          _$UpdateOrderParkingViewViewModelStateImpl value,
+          $Res Function(_$UpdateOrderParkingViewViewModelStateImpl) then) =
+      __$$UpdateOrderParkingViewViewModelStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UpdateOrderParkingViewViewModelStateImplCopyWithImpl<$Res>
+    extends _$ParkingViewViewModelStateCopyWithImpl<$Res,
+        _$UpdateOrderParkingViewViewModelStateImpl>
+    implements _$$UpdateOrderParkingViewViewModelStateImplCopyWith<$Res> {
+  __$$UpdateOrderParkingViewViewModelStateImplCopyWithImpl(
+      _$UpdateOrderParkingViewViewModelStateImpl _value,
+      $Res Function(_$UpdateOrderParkingViewViewModelStateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateOrderParkingViewViewModelStateImpl
+    implements UpdateOrderParkingViewViewModelState {
+  const _$UpdateOrderParkingViewViewModelStateImpl();
+
+  @override
+  String toString() {
+    return 'ParkingViewViewModelState.createOrderSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateOrderParkingViewViewModelStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+}
+
+abstract class UpdateOrderParkingViewViewModelState
+    implements ParkingViewViewModelState {
+  const factory UpdateOrderParkingViewViewModelState() =
+      _$UpdateOrderParkingViewViewModelStateImpl;
+}
+
+/// @nodoc
 abstract class _$$ErrorParkingViewViewModelStateImplCopyWith<$Res> {
   factory _$$ErrorParkingViewViewModelStateImplCopyWith(
           _$ErrorParkingViewViewModelStateImpl value,
