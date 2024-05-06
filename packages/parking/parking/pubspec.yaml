@@ -29,7 +29,7 @@ dependencies:
   vehicles_commons:
     git:
       url: https://github.com/lattoshenrique/flutter_parking_management.git
-      path: packages/vehicles_commons
+      path: packages/vehicles/vehicles_commons
       ref: main
   parking_commons:
     git:

@@ -9,12 +9,16 @@ abstract class BaseAppModuleRouting {
       child: (_) => const WelcomePage(),
     );
     r.module(
+      HomeModuleRouting.root.path,
+      module: HomeModule(),
+    );
+    r.module(
       VehiclesCommonsModulePaths.root.path,
       module: VehiclesModule(),
     );
     r.module(
-      HomeModuleRouting.root.path,
-      module: HomeModule(),
+      ParkingCommonsModulePaths.root.path,
+      module: ParkingModule(),
     );
   }
 }

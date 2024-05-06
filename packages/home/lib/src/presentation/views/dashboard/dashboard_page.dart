@@ -1,6 +1,7 @@
 import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:parking_commons/parking_commons.dart';
 import 'package:vehicles_commons/vehicles_commons.dart';
 
 import 'widgets/widgets.dart';
@@ -44,7 +45,9 @@ class _DashboardpageState extends State<Dashboardpage> {
                   title: 'Estacionamento',
                   description:
                       'Acompanhe o status atual do seu estacionamento. Registre entrada e saídas de veículos.',
-                  onTap: () {},
+                  onTap: () {
+                    Nav.pushNamed(ParkingCommonsModulePaths.root.path);
+                  },
                 ),
                 Dimension.sm.vertical,
                 HomeCardSelector(

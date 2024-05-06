@@ -90,7 +90,7 @@ class _VehicleListPageState
                   name: item.name,
                   onTap: () {
                     Nav.pushNamed(
-                      VehiclesModuleRouting.updateVehicle,
+                      VehiclesModuleRouting.setVehicle,
                       arguments: item,
                     ).then((_) {
                       viewModel.loadPage();
@@ -128,7 +128,7 @@ class _VehicleListPageState
       primaryButton: AppButton.primary(
         text: 'ADICIONAR NOVO VEÍCULO',
         onTap: () {
-          Nav.pushNamed(VehiclesModuleRouting.updateVehicle).then((_) {
+          Nav.pushNamed(VehiclesModuleRouting.setVehicle).then((_) {
             viewModel.loadPage();
           });
         },
