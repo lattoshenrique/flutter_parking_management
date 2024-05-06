@@ -17,7 +17,6 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$ParkingOrder {
   String get id => throw _privateConstructorUsedError;
-  Parking get parking => throw _privateConstructorUsedError;
   Vehicle get vehicle => throw _privateConstructorUsedError;
   DateTime get entryDate => throw _privateConstructorUsedError;
   DateTime? get departureDate => throw _privateConstructorUsedError;
@@ -35,12 +34,10 @@ abstract class $ParkingOrderCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      Parking parking,
       Vehicle vehicle,
       DateTime entryDate,
       DateTime? departureDate});
 
-  $ParkingCopyWith<$Res> get parking;
   $VehicleCopyWith<$Res> get vehicle;
 }
 
@@ -58,7 +55,6 @@ class _$ParkingOrderCopyWithImpl<$Res, $Val extends ParkingOrder>
   @override
   $Res call({
     Object? id = null,
-    Object? parking = null,
     Object? vehicle = null,
     Object? entryDate = null,
     Object? departureDate = freezed,
@@ -68,10 +64,6 @@ class _$ParkingOrderCopyWithImpl<$Res, $Val extends ParkingOrder>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      parking: null == parking
-          ? _value.parking
-          : parking // ignore: cast_nullable_to_non_nullable
-              as Parking,
       vehicle: null == vehicle
           ? _value.vehicle
           : vehicle // ignore: cast_nullable_to_non_nullable
@@ -85,14 +77,6 @@ class _$ParkingOrderCopyWithImpl<$Res, $Val extends ParkingOrder>
           : departureDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ParkingCopyWith<$Res> get parking {
-    return $ParkingCopyWith<$Res>(_value.parking, (value) {
-      return _then(_value.copyWith(parking: value) as $Val);
-    });
   }
 
   @override
@@ -114,13 +98,10 @@ abstract class _$$ParkingOrderImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      Parking parking,
       Vehicle vehicle,
       DateTime entryDate,
       DateTime? departureDate});
 
-  @override
-  $ParkingCopyWith<$Res> get parking;
   @override
   $VehicleCopyWith<$Res> get vehicle;
 }
@@ -137,7 +118,6 @@ class __$$ParkingOrderImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? parking = null,
     Object? vehicle = null,
     Object? entryDate = null,
     Object? departureDate = freezed,
@@ -147,10 +127,6 @@ class __$$ParkingOrderImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      parking: null == parking
-          ? _value.parking
-          : parking // ignore: cast_nullable_to_non_nullable
-              as Parking,
       vehicle: null == vehicle
           ? _value.vehicle
           : vehicle // ignore: cast_nullable_to_non_nullable
@@ -172,15 +148,12 @@ class __$$ParkingOrderImplCopyWithImpl<$Res>
 class _$ParkingOrderImpl implements _ParkingOrder {
   const _$ParkingOrderImpl(
       {required this.id,
-      required this.parking,
       required this.vehicle,
       required this.entryDate,
       this.departureDate});
 
   @override
   final String id;
-  @override
-  final Parking parking;
   @override
   final Vehicle vehicle;
   @override
@@ -190,7 +163,7 @@ class _$ParkingOrderImpl implements _ParkingOrder {
 
   @override
   String toString() {
-    return 'ParkingOrder(id: $id, parking: $parking, vehicle: $vehicle, entryDate: $entryDate, departureDate: $departureDate)';
+    return 'ParkingOrder(id: $id, vehicle: $vehicle, entryDate: $entryDate, departureDate: $departureDate)';
   }
 
   @override
@@ -199,7 +172,6 @@ class _$ParkingOrderImpl implements _ParkingOrder {
         (other.runtimeType == runtimeType &&
             other is _$ParkingOrderImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.parking, parking) || other.parking == parking) &&
             (identical(other.vehicle, vehicle) || other.vehicle == vehicle) &&
             (identical(other.entryDate, entryDate) ||
                 other.entryDate == entryDate) &&
@@ -209,7 +181,7 @@ class _$ParkingOrderImpl implements _ParkingOrder {
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, parking, vehicle, entryDate, departureDate);
+      Object.hash(runtimeType, id, vehicle, entryDate, departureDate);
 
   @JsonKey(ignore: true)
   @override
@@ -221,15 +193,12 @@ class _$ParkingOrderImpl implements _ParkingOrder {
 abstract class _ParkingOrder implements ParkingOrder {
   const factory _ParkingOrder(
       {required final String id,
-      required final Parking parking,
       required final Vehicle vehicle,
       required final DateTime entryDate,
       final DateTime? departureDate}) = _$ParkingOrderImpl;
 
   @override
   String get id;
-  @override
-  Parking get parking;
   @override
   Vehicle get vehicle;
   @override

@@ -23,12 +23,10 @@ mixin _$ParkingOrderModel {
   @HiveField(0)
   String get id => throw _privateConstructorUsedError;
   @HiveField(1)
-  ParkingModel get parking => throw _privateConstructorUsedError;
-  @HiveField(2)
   VehicleModel get vehicle => throw _privateConstructorUsedError;
-  @HiveField(3)
+  @HiveField(2)
   DateTime get entryDate => throw _privateConstructorUsedError;
-  @HiveField(4)
+  @HiveField(3)
   DateTime? get departureDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -45,12 +43,10 @@ abstract class $ParkingOrderModelCopyWith<$Res> {
   @useResult
   $Res call(
       {@HiveField(0) String id,
-      @HiveField(1) ParkingModel parking,
-      @HiveField(2) VehicleModel vehicle,
-      @HiveField(3) DateTime entryDate,
-      @HiveField(4) DateTime? departureDate});
+      @HiveField(1) VehicleModel vehicle,
+      @HiveField(2) DateTime entryDate,
+      @HiveField(3) DateTime? departureDate});
 
-  $ParkingModelCopyWith<$Res> get parking;
   $VehicleModelCopyWith<$Res> get vehicle;
 }
 
@@ -68,7 +64,6 @@ class _$ParkingOrderModelCopyWithImpl<$Res, $Val extends ParkingOrderModel>
   @override
   $Res call({
     Object? id = null,
-    Object? parking = null,
     Object? vehicle = null,
     Object? entryDate = null,
     Object? departureDate = freezed,
@@ -78,10 +73,6 @@ class _$ParkingOrderModelCopyWithImpl<$Res, $Val extends ParkingOrderModel>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      parking: null == parking
-          ? _value.parking
-          : parking // ignore: cast_nullable_to_non_nullable
-              as ParkingModel,
       vehicle: null == vehicle
           ? _value.vehicle
           : vehicle // ignore: cast_nullable_to_non_nullable
@@ -95,14 +86,6 @@ class _$ParkingOrderModelCopyWithImpl<$Res, $Val extends ParkingOrderModel>
           : departureDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ParkingModelCopyWith<$Res> get parking {
-    return $ParkingModelCopyWith<$Res>(_value.parking, (value) {
-      return _then(_value.copyWith(parking: value) as $Val);
-    });
   }
 
   @override
@@ -124,13 +107,10 @@ abstract class _$$ParkingOrderModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {@HiveField(0) String id,
-      @HiveField(1) ParkingModel parking,
-      @HiveField(2) VehicleModel vehicle,
-      @HiveField(3) DateTime entryDate,
-      @HiveField(4) DateTime? departureDate});
+      @HiveField(1) VehicleModel vehicle,
+      @HiveField(2) DateTime entryDate,
+      @HiveField(3) DateTime? departureDate});
 
-  @override
-  $ParkingModelCopyWith<$Res> get parking;
   @override
   $VehicleModelCopyWith<$Res> get vehicle;
 }
@@ -147,7 +127,6 @@ class __$$ParkingOrderModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? parking = null,
     Object? vehicle = null,
     Object? entryDate = null,
     Object? departureDate = freezed,
@@ -157,10 +136,6 @@ class __$$ParkingOrderModelImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      parking: null == parking
-          ? _value.parking
-          : parking // ignore: cast_nullable_to_non_nullable
-              as ParkingModel,
       vehicle: null == vehicle
           ? _value.vehicle
           : vehicle // ignore: cast_nullable_to_non_nullable
@@ -185,10 +160,9 @@ class __$$ParkingOrderModelImplCopyWithImpl<$Res>
 class _$ParkingOrderModelImpl extends _ParkingOrderModel {
   const _$ParkingOrderModelImpl(
       {@HiveField(0) required this.id,
-      @HiveField(1) required this.parking,
-      @HiveField(2) required this.vehicle,
-      @HiveField(3) required this.entryDate,
-      @HiveField(4) this.departureDate})
+      @HiveField(1) required this.vehicle,
+      @HiveField(2) required this.entryDate,
+      @HiveField(3) this.departureDate})
       : super._();
 
   factory _$ParkingOrderModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -199,20 +173,17 @@ class _$ParkingOrderModelImpl extends _ParkingOrderModel {
   final String id;
   @override
   @HiveField(1)
-  final ParkingModel parking;
-  @override
-  @HiveField(2)
   final VehicleModel vehicle;
   @override
-  @HiveField(3)
+  @HiveField(2)
   final DateTime entryDate;
   @override
-  @HiveField(4)
+  @HiveField(3)
   final DateTime? departureDate;
 
   @override
   String toString() {
-    return 'ParkingOrderModel(id: $id, parking: $parking, vehicle: $vehicle, entryDate: $entryDate, departureDate: $departureDate)';
+    return 'ParkingOrderModel(id: $id, vehicle: $vehicle, entryDate: $entryDate, departureDate: $departureDate)';
   }
 
   @override
@@ -221,7 +192,6 @@ class _$ParkingOrderModelImpl extends _ParkingOrderModel {
         (other.runtimeType == runtimeType &&
             other is _$ParkingOrderModelImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.parking, parking) || other.parking == parking) &&
             (identical(other.vehicle, vehicle) || other.vehicle == vehicle) &&
             (identical(other.entryDate, entryDate) ||
                 other.entryDate == entryDate) &&
@@ -232,7 +202,7 @@ class _$ParkingOrderModelImpl extends _ParkingOrderModel {
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, parking, vehicle, entryDate, departureDate);
+      Object.hash(runtimeType, id, vehicle, entryDate, departureDate);
 
   @JsonKey(ignore: true)
   @override
@@ -252,10 +222,9 @@ class _$ParkingOrderModelImpl extends _ParkingOrderModel {
 abstract class _ParkingOrderModel extends ParkingOrderModel {
   const factory _ParkingOrderModel(
       {@HiveField(0) required final String id,
-      @HiveField(1) required final ParkingModel parking,
-      @HiveField(2) required final VehicleModel vehicle,
-      @HiveField(3) required final DateTime entryDate,
-      @HiveField(4) final DateTime? departureDate}) = _$ParkingOrderModelImpl;
+      @HiveField(1) required final VehicleModel vehicle,
+      @HiveField(2) required final DateTime entryDate,
+      @HiveField(3) final DateTime? departureDate}) = _$ParkingOrderModelImpl;
   const _ParkingOrderModel._() : super._();
 
   factory _ParkingOrderModel.fromJson(Map<String, dynamic> json) =
@@ -266,15 +235,12 @@ abstract class _ParkingOrderModel extends ParkingOrderModel {
   String get id;
   @override
   @HiveField(1)
-  ParkingModel get parking;
-  @override
-  @HiveField(2)
   VehicleModel get vehicle;
   @override
-  @HiveField(3)
+  @HiveField(2)
   DateTime get entryDate;
   @override
-  @HiveField(4)
+  @HiveField(3)
   DateTime? get departureDate;
   @override
   @JsonKey(ignore: true)

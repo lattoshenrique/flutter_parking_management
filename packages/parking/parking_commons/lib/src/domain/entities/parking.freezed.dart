@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Parking {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  List<ParkingOrder> get orders => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ParkingCopyWith<Parking> get copyWith => throw _privateConstructorUsedError;
@@ -28,7 +29,7 @@ abstract class $ParkingCopyWith<$Res> {
   factory $ParkingCopyWith(Parking value, $Res Function(Parking) then) =
       _$ParkingCopyWithImpl<$Res, Parking>;
   @useResult
-  $Res call({String id, String name});
+  $Res call({String id, String name, List<ParkingOrder> orders});
 }
 
 /// @nodoc
@@ -46,6 +47,7 @@ class _$ParkingCopyWithImpl<$Res, $Val extends Parking>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? orders = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -56,6 +58,10 @@ class _$ParkingCopyWithImpl<$Res, $Val extends Parking>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      orders: null == orders
+          ? _value.orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as List<ParkingOrder>,
     ) as $Val);
   }
 }
@@ -67,7 +73,7 @@ abstract class _$$ParkingImplCopyWith<$Res> implements $ParkingCopyWith<$Res> {
       __$$ParkingImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name});
+  $Res call({String id, String name, List<ParkingOrder> orders});
 }
 
 /// @nodoc
@@ -83,6 +89,7 @@ class __$$ParkingImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? orders = null,
   }) {
     return _then(_$ParkingImpl(
       id: null == id
@@ -93,6 +100,10 @@ class __$$ParkingImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      orders: null == orders
+          ? _value._orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as List<ParkingOrder>,
     ));
   }
 }
@@ -100,16 +111,28 @@ class __$$ParkingImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ParkingImpl implements _Parking {
-  const _$ParkingImpl({required this.id, required this.name});
+  const _$ParkingImpl(
+      {required this.id,
+      required this.name,
+      final List<ParkingOrder> orders = const []})
+      : _orders = orders;
 
   @override
   final String id;
   @override
   final String name;
+  final List<ParkingOrder> _orders;
+  @override
+  @JsonKey()
+  List<ParkingOrder> get orders {
+    if (_orders is EqualUnmodifiableListView) return _orders;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_orders);
+  }
 
   @override
   String toString() {
-    return 'Parking(id: $id, name: $name)';
+    return 'Parking(id: $id, name: $name, orders: $orders)';
   }
 
   @override
@@ -118,11 +141,13 @@ class _$ParkingImpl implements _Parking {
         (other.runtimeType == runtimeType &&
             other is _$ParkingImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name));
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality().equals(other._orders, _orders));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, const DeepCollectionEquality().hash(_orders));
 
   @JsonKey(ignore: true)
   @override
@@ -133,12 +158,16 @@ class _$ParkingImpl implements _Parking {
 
 abstract class _Parking implements Parking {
   const factory _Parking(
-      {required final String id, required final String name}) = _$ParkingImpl;
+      {required final String id,
+      required final String name,
+      final List<ParkingOrder> orders}) = _$ParkingImpl;
 
   @override
   String get id;
   @override
   String get name;
+  @override
+  List<ParkingOrder> get orders;
   @override
   @JsonKey(ignore: true)
   _$$ParkingImplCopyWith<_$ParkingImpl> get copyWith =>

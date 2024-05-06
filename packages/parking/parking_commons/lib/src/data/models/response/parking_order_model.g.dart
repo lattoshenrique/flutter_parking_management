@@ -8,7 +8,7 @@ part of 'parking_order_model.dart';
 
 class ParkingOrderModelAdapter extends TypeAdapter<_$ParkingOrderModelImpl> {
   @override
-  final int typeId = 3;
+  final int typeId = 4;
 
   @override
   _$ParkingOrderModelImpl read(BinaryReader reader) {
@@ -18,26 +18,23 @@ class ParkingOrderModelAdapter extends TypeAdapter<_$ParkingOrderModelImpl> {
     };
     return _$ParkingOrderModelImpl(
       id: fields[0] as String,
-      parking: fields[1] as ParkingModel,
-      vehicle: fields[2] as VehicleModel,
-      entryDate: fields[3] as DateTime,
-      departureDate: fields[4] as DateTime?,
+      vehicle: fields[1] as VehicleModel,
+      entryDate: fields[2] as DateTime,
+      departureDate: fields[3] as DateTime?,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$ParkingOrderModelImpl obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(4)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.parking)
-      ..writeByte(2)
       ..write(obj.vehicle)
-      ..writeByte(3)
+      ..writeByte(2)
       ..write(obj.entryDate)
-      ..writeByte(4)
+      ..writeByte(3)
       ..write(obj.departureDate);
   }
 
@@ -60,7 +57,6 @@ _$ParkingOrderModelImpl _$$ParkingOrderModelImplFromJson(
         Map<String, dynamic> json) =>
     _$ParkingOrderModelImpl(
       id: json['id'] as String,
-      parking: ParkingModel.fromJson(json['parking'] as Map<String, dynamic>),
       vehicle: VehicleModel.fromJson(json['vehicle'] as Map<String, dynamic>),
       entryDate: DateTime.parse(json['entryDate'] as String),
       departureDate: json['departureDate'] == null
@@ -72,7 +68,6 @@ Map<String, dynamic> _$$ParkingOrderModelImplToJson(
         _$ParkingOrderModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'parking': instance.parking,
       'vehicle': instance.vehicle,
       'entryDate': instance.entryDate.toIso8601String(),
       'departureDate': instance.departureDate?.toIso8601String(),

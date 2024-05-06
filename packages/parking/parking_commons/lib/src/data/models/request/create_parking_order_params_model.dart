@@ -2,7 +2,6 @@ import 'package:common_deps/common_deps.dart';
 import 'package:vehicles_commons/vehicles_commons.dart';
 
 import '../../../domain/entities/entities.dart';
-import '../response/response.dart';
 
 part 'create_parking_order_params_model.freezed.dart';
 part 'create_parking_order_params_model.g.dart';
@@ -17,7 +16,7 @@ sealed class CreateParkingOrderParamsModel
   const CreateParkingOrderParamsModel._();
 
   const factory CreateParkingOrderParamsModel({
-    required ParkingModel parking,
+    required String parkingId,
     required VehicleModel vehicle,
   }) = _CreateParkingOrderParamsModel;
 
@@ -25,14 +24,15 @@ sealed class CreateParkingOrderParamsModel
       _$CreateParkingOrderParamsModelFromJson(json);
 
   factory CreateParkingOrderParamsModel.fromEntity(
-          CreateParkingOrderParams entity) =>
+    CreateParkingOrderParams entity,
+  ) =>
       CreateParkingOrderParamsModel(
-        parking: ParkingModel.fromEntity(entity.parking),
+        parkingId: entity.parkingId,
         vehicle: VehicleModel.fromEntity(entity.vehicle),
       );
 
   CreateParkingOrderParams toEntity() => CreateParkingOrderParams(
-        parking: parking.toEntity(),
+        parkingId: parkingId,
         vehicle: vehicle.toEntity(),
       );
 }

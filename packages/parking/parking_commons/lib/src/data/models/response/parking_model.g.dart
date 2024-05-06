@@ -8,7 +8,7 @@ part of 'parking_model.dart';
 
 class ParkingModelAdapter extends TypeAdapter<_$ParkingModelImpl> {
   @override
-  final int typeId = 2;
+  final int typeId = 3;
 
   @override
   _$ParkingModelImpl read(BinaryReader reader) {
@@ -19,17 +19,20 @@ class ParkingModelAdapter extends TypeAdapter<_$ParkingModelImpl> {
     return _$ParkingModelImpl(
       id: fields[0] as String,
       name: fields[1] as String,
+      orders: (fields[2] as List).cast<ParkingOrderModel>(),
     );
   }
 
   @override
   void write(BinaryWriter writer, _$ParkingModelImpl obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(3)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.name);
+      ..write(obj.name)
+      ..writeByte(2)
+      ..write(obj.orders);
   }
 
   @override
@@ -51,10 +54,16 @@ _$ParkingModelImpl _$$ParkingModelImplFromJson(Map<String, dynamic> json) =>
     _$ParkingModelImpl(
       id: json['id'] as String,
       name: json['name'] as String,
+      orders: (json['orders'] as List<dynamic>?)
+              ?.map(
+                  (e) => ParkingOrderModel.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$ParkingModelImplToJson(_$ParkingModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'orders': instance.orders,
     };

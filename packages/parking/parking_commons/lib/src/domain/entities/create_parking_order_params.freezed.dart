@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CreateParkingOrderParams {
-  Parking get parking => throw _privateConstructorUsedError;
+  String get parkingId => throw _privateConstructorUsedError;
   Vehicle get vehicle => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,9 +30,8 @@ abstract class $CreateParkingOrderParamsCopyWith<$Res> {
           $Res Function(CreateParkingOrderParams) then) =
       _$CreateParkingOrderParamsCopyWithImpl<$Res, CreateParkingOrderParams>;
   @useResult
-  $Res call({Parking parking, Vehicle vehicle});
+  $Res call({String parkingId, Vehicle vehicle});
 
-  $ParkingCopyWith<$Res> get parking;
   $VehicleCopyWith<$Res> get vehicle;
 }
 
@@ -50,27 +49,19 @@ class _$CreateParkingOrderParamsCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? parking = null,
+    Object? parkingId = null,
     Object? vehicle = null,
   }) {
     return _then(_value.copyWith(
-      parking: null == parking
-          ? _value.parking
-          : parking // ignore: cast_nullable_to_non_nullable
-              as Parking,
+      parkingId: null == parkingId
+          ? _value.parkingId
+          : parkingId // ignore: cast_nullable_to_non_nullable
+              as String,
       vehicle: null == vehicle
           ? _value.vehicle
           : vehicle // ignore: cast_nullable_to_non_nullable
               as Vehicle,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ParkingCopyWith<$Res> get parking {
-    return $ParkingCopyWith<$Res>(_value.parking, (value) {
-      return _then(_value.copyWith(parking: value) as $Val);
-    });
   }
 
   @override
@@ -91,10 +82,8 @@ abstract class _$$CreateParkingOrderParamsImplCopyWith<$Res>
       __$$CreateParkingOrderParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Parking parking, Vehicle vehicle});
+  $Res call({String parkingId, Vehicle vehicle});
 
-  @override
-  $ParkingCopyWith<$Res> get parking;
   @override
   $VehicleCopyWith<$Res> get vehicle;
 }
@@ -112,14 +101,14 @@ class __$$CreateParkingOrderParamsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? parking = null,
+    Object? parkingId = null,
     Object? vehicle = null,
   }) {
     return _then(_$CreateParkingOrderParamsImpl(
-      parking: null == parking
-          ? _value.parking
-          : parking // ignore: cast_nullable_to_non_nullable
-              as Parking,
+      parkingId: null == parkingId
+          ? _value.parkingId
+          : parkingId // ignore: cast_nullable_to_non_nullable
+              as String,
       vehicle: null == vehicle
           ? _value.vehicle
           : vehicle // ignore: cast_nullable_to_non_nullable
@@ -132,16 +121,16 @@ class __$$CreateParkingOrderParamsImplCopyWithImpl<$Res>
 
 class _$CreateParkingOrderParamsImpl implements _CreateParkingOrderParams {
   const _$CreateParkingOrderParamsImpl(
-      {required this.parking, required this.vehicle});
+      {required this.parkingId, required this.vehicle});
 
   @override
-  final Parking parking;
+  final String parkingId;
   @override
   final Vehicle vehicle;
 
   @override
   String toString() {
-    return 'CreateParkingOrderParams(parking: $parking, vehicle: $vehicle)';
+    return 'CreateParkingOrderParams(parkingId: $parkingId, vehicle: $vehicle)';
   }
 
   @override
@@ -149,12 +138,13 @@ class _$CreateParkingOrderParamsImpl implements _CreateParkingOrderParams {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CreateParkingOrderParamsImpl &&
-            (identical(other.parking, parking) || other.parking == parking) &&
+            (identical(other.parkingId, parkingId) ||
+                other.parkingId == parkingId) &&
             (identical(other.vehicle, vehicle) || other.vehicle == vehicle));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, parking, vehicle);
+  int get hashCode => Object.hash(runtimeType, parkingId, vehicle);
 
   @JsonKey(ignore: true)
   @override
@@ -166,11 +156,11 @@ class _$CreateParkingOrderParamsImpl implements _CreateParkingOrderParams {
 
 abstract class _CreateParkingOrderParams implements CreateParkingOrderParams {
   const factory _CreateParkingOrderParams(
-      {required final Parking parking,
+      {required final String parkingId,
       required final Vehicle vehicle}) = _$CreateParkingOrderParamsImpl;
 
   @override
-  Parking get parking;
+  String get parkingId;
   @override
   Vehicle get vehicle;
   @override

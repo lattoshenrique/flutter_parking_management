@@ -26,6 +26,7 @@ dependencies:
   shimmer: ^3.0.0
   mocktail: ^1.0.3
   faker: ^2.1.0
+  uuid: ^4.4.0
 
 dev_dependencies:
   flutter_test:

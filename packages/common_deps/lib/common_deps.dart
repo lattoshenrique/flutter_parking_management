@@ -20,6 +20,7 @@ export 'package:collection/collection.dart';
 export 'package:hive/hive.dart';
 export 'package:hive_flutter/hive_flutter.dart';
 export 'package:shimmer/shimmer.dart';
+export 'package:uuid/uuid.dart';
 
 const freezedNoHelpers = Freezed(
   when: FreezedWhenOptions.none,

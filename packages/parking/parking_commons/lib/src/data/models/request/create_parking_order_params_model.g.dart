@@ -9,8 +9,7 @@ part of 'create_parking_order_params_model.dart';
 _$CreateParkingOrderParamsModelImpl
     _$$CreateParkingOrderParamsModelImplFromJson(Map<String, dynamic> json) =>
         _$CreateParkingOrderParamsModelImpl(
-          parking:
-              ParkingModel.fromJson(json['parking'] as Map<String, dynamic>),
+          parkingId: json['parkingId'] as String,
           vehicle:
               VehicleModel.fromJson(json['vehicle'] as Map<String, dynamic>),
         );
@@ -18,6 +17,6 @@ _$CreateParkingOrderParamsModelImpl
 Map<String, dynamic> _$$CreateParkingOrderParamsModelImplToJson(
         _$CreateParkingOrderParamsModelImpl instance) =>
     <String, dynamic>{
-      'parking': instance.parking,
+      'parkingId': instance.parkingId,
       'vehicle': instance.vehicle,
     };
