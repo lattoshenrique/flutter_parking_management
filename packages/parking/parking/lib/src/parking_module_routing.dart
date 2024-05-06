@@ -9,6 +9,7 @@ abstract class ParkingModuleRouting {
   static const _root = ParkingCommonsModulePaths.root;
 
   static const allParkingView = BasePath('/', _root);
+  static const parkingView = BasePath('/view', _root);
   static const setOrder = BasePath('/setOrder', _root);
   static const errorPage = BasePath('/error', _root);
 

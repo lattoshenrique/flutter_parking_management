@@ -41,7 +41,7 @@ class HomeCardSelector extends StatelessWidget {
                 children: [
                   Text(title).cardTitle1(context),
                   Dimension.xxs.vertical,
-                  Text(description).cardBody1(context),
+                  Text(description).cardBody2(context),
                 ],
               ),
             ),

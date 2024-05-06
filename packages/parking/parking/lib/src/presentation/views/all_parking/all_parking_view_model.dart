@@ -28,18 +28,21 @@ class AllParkingViewModel extends ViewModel<AllParkingViewModelState> {
       return;
     }
 
-    final List<Parking> parking = List<Parking>.from(parkingRes.toRight());
+    List<Parking> parking = parkingRes.toRight();
 
     if (parking.isEmpty) {
-      for (final name in _mockParking()) {
+      final mockParking = _mockParking();
+      final List<Parking> newParkingList = [];
+      for (final name in mockParking) {
         final res =
             await _createParkingUsecase(CreateParkingParams(name: name));
         if (res.isLeft()) {
           emit(const AllParkingViewModelState.error());
           return;
         }
-        parking.add(res.toRight());
+        newParkingList.add(res.toRight());
       }
+      parking = newParkingList;
     }
 
     emit(AllParkingViewModelState.loaded(parking: parking));
@@ -48,11 +51,11 @@ class AllParkingViewModel extends ViewModel<AllParkingViewModelState> {
   List<String> _mockParking() {
     final List<String> result = [];
     final List<String> letters = ['A', 'B', 'C', 'D', 'E'];
-    const int vacanciesPerLetter = 5;
+    const int vacanciesPerLetter = 4;
 
-    for (var letra in letters) {
+    for (final letter in letters) {
       for (int i = 1; i <= vacanciesPerLetter; i++) {
-        result.add('$letra$i');
+        result.add('$letter$i');
       }
     }
 

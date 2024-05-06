@@ -33,10 +33,14 @@ class _VehicleListPageState
           onLeadingPressed: onButtonPressed,
           onPrimaryButtonPressed: onButtonPressed,
           primaryButtonText: 'VOLTAR',
+          secondaryButtonText: 'VOLTAR PARA O INÍCIO',
+          onSecondaryButtonPressed: () {
+            Nav.popUntil((route) => route.isFirst);
+          },
           message: message,
         );
         Nav.pushNamed(
-          VehiclesModuleRouting.errorPage,
+          VehiclesModuleRouting.errorPage.completePath,
           arguments: args,
         );
         break;

@@ -24,7 +24,32 @@ extension AppTexts on Text {
     );
   }
 
+  Text cardSubTitle1(BuildContext context) {
+    return _copyWith(
+      context.textTheme.titleMedium?.copyWith(
+        color: context.colorScheme.onBackground.withOpacity(.7),
+      ),
+    );
+  }
+
   Text cardBody1(BuildContext context) {
+    return _copyWith(
+      context.textTheme.bodyLarge?.copyWith(
+        color: context.colorScheme.onBackground.withOpacity(.7),
+      ),
+    );
+  }
+
+  Text cardBody1Bold(BuildContext context) {
+    return _copyWith(
+      context.textTheme.bodyLarge?.copyWith(
+        color: context.colorScheme.onBackground.withOpacity(.7),
+        fontWeight: FontWeight.bold,
+      ),
+    );
+  }
+
+  Text cardBody2(BuildContext context) {
     return _copyWith(
       context.textTheme.bodyMedium?.copyWith(
         color: context.colorScheme.onBackground.withOpacity(.7),

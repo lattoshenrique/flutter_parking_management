@@ -59,14 +59,14 @@ class _DashboardpageState extends State<Dashboardpage> {
                     Nav.pushNamed(VehiclesCommonsModulePaths.root.path);
                   },
                 ),
-                Dimension.sm.vertical,
-                HomeCardSelector(
-                  icon: Icons.description_outlined,
-                  title: 'Relatórios',
-                  description:
-                      'Consulte o histórico e gere relatórios de entradas e saídas de veículos.',
-                  onTap: () {},
-                ),
+                // Dimension.sm.vertical,
+                // HomeCardSelector(
+                //   icon: Icons.description_outlined,
+                //   title: 'Relatórios',
+                //   description:
+                //       'Consulte o histórico e gere relatórios de entradas e saídas de veículos.',
+                //   onTap: () {},
+                // ),
               ],
             ),
           ],

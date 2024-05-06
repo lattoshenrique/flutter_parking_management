@@ -25,7 +25,7 @@ ThemeData _buildLight() {
 ThemeData _buildDark() {
   return ThemeData.from(
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.blueGrey,
+      seedColor: Colors.amberAccent,
       brightness: Brightness.dark,
     ),
     textTheme: Typography.material2021().white,
