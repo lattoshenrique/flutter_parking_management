@@ -1,13 +1,12 @@
 import 'package:common_deps/common_deps.dart';
 import 'package:core/core.dart';
-import 'package:vehicles_commons/vehicles_commons.dart';
 
 import '../../models/models.dart';
 
 const String _kStorageKey = 'parking';
 
 abstract class IParkingLocalDataSource {
-  Future<ParkingModel> create(CreateVehicleParamsModel params);
+  Future<ParkingModel> create(CreateParkingParamsModel params);
 
   Future<List<ParkingModel>> getAll();
 
@@ -28,7 +27,7 @@ class ParkingLocalDataSource implements IParkingLocalDataSource {
   ParkingLocalDataSource(this._storageClient);
 
   @override
-  Future<ParkingModel> create(CreateVehicleParamsModel params) async {
+  Future<ParkingModel> create(CreateParkingParamsModel params) async {
     final list = List<ParkingModel>.from(await getAll());
 
     final newObject = ParkingModel(

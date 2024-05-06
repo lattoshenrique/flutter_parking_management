@@ -6,8 +6,7 @@ part 'parking_failure.freezed.dart';
 sealed class ParkingFailure with _$ParkingFailure {
   const factory ParkingFailure.unexpected([String? message]) =
       ParkingUnexpectedFailure;
-  const factory ParkingFailure.plateExists([String? message]) =
-      ParkingPlateExistsFailure;
+
   const factory ParkingFailure.storage([String? message]) =
       ParkingStorageFailure;
 }
