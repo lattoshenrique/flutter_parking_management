@@ -17,7 +17,6 @@ class _DashboardpageState extends State<Dashboardpage> {
   @override
   Widget build(BuildContext context) {
     return CommonScaffold.standard(
-      appBar: const CommonAppBar.standard(titleText: ''),
       body: Padding(
         padding: EdgeInsets.symmetric(
           vertical: Dimension.xl.height,
